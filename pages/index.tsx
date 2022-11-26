@@ -60,7 +60,7 @@ const Home: FC<StaticProps> = ({ data }) => {
             <p>{data.name}</p>
             <p>{data.description}</p>
             <div className={classes["btn-group"]}>
-              <button>RESUME</button>
+              <button onClick={() => push(data.resume)}>RESUME</button>
               {socialMediaLinks.map(({ Icon, to }, i) => (
                 <button key={i} onClick={() => push(to)}>
                   <Icon />
