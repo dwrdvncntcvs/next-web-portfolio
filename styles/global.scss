@@ -1,0 +1,31 @@
+$primary-color: #00adb5;
+$secondary-color: #222831;
+$tertiary-color: #393e46;
+$quaternary-color: #eeeeee;
+
+$navigation-width-full-px: 120px;
+$content-adjust-full-px: 120px;
+
+$btn-60: 60px;
+$btn-font-size-c: 30px;
+
+$logo-size: 90px;
+$link-icon-size: 55px;
+
+$LGdesktop: 1920px;
+$MDdesktop: 1600px;
+$desktop: 1366px;
+$LGtablet: 1150px;
+$tablet: 768px;
+$phone: 500px;
+
+@mixin flex(
+  $direction: row,
+  $justify-content: flex-start,
+  $align-items: flex-start
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+};

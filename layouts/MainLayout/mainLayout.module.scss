@@ -1,0 +1,14 @@
+@import "../../styles/global.scss";
+
+.container {
+  @include flex(row, flex-start, flex-start);
+  width: 100%;
+  height: 100vh;
+
+  main {
+    padding-left: $content-adjust-full-px;
+    width: 100%;
+    height: 100%;
+    background-color: $secondary-color;
+  }
+}

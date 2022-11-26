@@ -1,0 +1,100 @@
+@import "../../styles/global.scss";
+
+.navigation {
+  @include flex(column, flex-start, flex-start);
+  width: $navigation-width-full-px;
+  height: 100%;
+  background-color: $tertiary-color;
+  position: fixed;
+
+  .title {
+    @include flex(column, center, center);
+    flex: 1;
+    width: 100%;
+
+    a {
+      @include flex(column, center, center);
+      border-radius: 100%;
+      background-color: $secondary-color;
+      width: calc($logo-size - 5px);
+      height: calc($logo-size - 5px);
+
+      img {
+        width: $logo-size;
+        height: $logo-size;
+      }
+    }
+  }
+
+  .links {
+    @include flex(column, center, center);
+    flex: 3;
+    width: 100%;
+    list-style-type: none;
+    gap: 10px;
+
+    a {
+      @include flex(column, center, center);
+      width: $link-icon-size;
+      height: $link-icon-size;
+      background-color: $quaternary-color;
+      border-radius: 20px;
+      color: $tertiary-color;
+      transition: all ease-out 0.2s;
+
+      #icon {
+        width: calc($link-icon-size - 25px);
+        height: calc($link-icon-size - 25px);
+      }
+
+      &:hover {
+        background-color: $secondary-color;
+        color: $primary-color;
+        border-radius: 100%;
+      }
+    }
+
+    .active {
+      color: $quaternary-color;
+      background-color: $primary-color;
+      border-radius: 100%;
+
+      &:hover {
+        color: $quaternary-color;
+        background-color: $primary-color;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .footer {
+    @include flex(column, center, center);
+    flex: 1;
+    width: 100%;
+
+    p {
+      text-align: center;
+      font-size: 0.8rem;
+      color: $quaternary-color;
+
+      span {
+        color: $primary-color;
+        font-weight: bold;
+      }
+    }
+
+    .social-links {
+      @include flex(row, center, center);
+      gap: 10px;
+
+      a {
+        color: $quaternary-color;
+
+        #social-icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
