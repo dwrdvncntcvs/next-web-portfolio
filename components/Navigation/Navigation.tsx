@@ -40,7 +40,13 @@ const Navigation = () => {
     <nav className={classes.navigation}>
       <div className={classes.title}>
         <Link href="/">
-          <Image src={app_logo} alt="" />
+          <Image
+            src={app_logo.src}
+            alt=""
+            width={100}
+            height={100}
+            loader={({ src, width }) => `${src}?w=${width}`}
+          />
         </Link>
       </div>
       <div className={classes.links}>
