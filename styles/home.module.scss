@@ -1,0 +1,90 @@
+@import "./global.scss";
+
+#home {
+  @include flex(row, flex-start, flex-start);
+  height: 100%;
+  width: 100%;
+
+  section {
+    height: 100%;
+    z-index: 2;
+
+    p:nth-child(1) {
+      font-size: 5rem;
+      font-weight: 400;
+      color: $quaternary-color;
+      transform: translateY(50px);
+    }
+
+    p:nth-child(2) {
+      font-size: 6rem;
+      font-weight: bold;
+      color: $primary-color;
+      transform: translateY(10px);
+    }
+
+    p:nth-child(3) {
+      font-size: 2rem;
+      color: $quaternary-color;
+    }
+
+    .btn-group {
+      @include flex();
+      gap: 10px;
+
+      button:nth-child(1) {
+        width: 400px;
+        height: 65px;
+        border-radius: 50px;
+        font-size: 20px;
+        font-weight: 700;
+        color: $secondary-color;
+        background-color: $quaternary-color;
+
+        &:hover {
+          color: $quaternary-color;
+          background-color: $primary-color;
+          letter-spacing: 6px;
+          border-color: $primary-color;
+        }
+      }
+
+      button {
+        @include flex(column, center, center);
+        width: 65px;
+        height: 65px;
+        border-radius: 100%;
+        transform: translateY(40px);
+        border: 3px solid $quaternary-color;
+        background-color: transparent;
+        color: $quaternary-color;
+        font-size: 25px;
+        letter-spacing: 4px;
+        cursor: pointer;
+        transition: all ease-out 0.2s;
+        font-weight: 500;
+
+        &:hover {
+          color: $secondary-color;
+          background-color: $quaternary-color;
+          letter-spacing: 6px;
+        }
+      }
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+
+  section:nth-child(1) {
+    @include flex(column, center, flex-start);
+    flex: 3;
+  }
+
+  section:nth-child(2) {
+    @include flex(column, flex-start, flex-start);
+    flex: 2;
+    padding-left: 100px;
+  }
+}

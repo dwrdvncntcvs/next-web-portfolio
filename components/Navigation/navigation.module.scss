@@ -6,6 +6,7 @@
   height: 100%;
   background-color: $tertiary-color;
   position: fixed;
+  z-index: 999;
 
   .title {
     @include flex(column, center, center);
@@ -71,6 +72,7 @@
     @include flex(column, center, center);
     flex: 1;
     width: 100%;
+    gap: 10px;
 
     p {
       text-align: center;

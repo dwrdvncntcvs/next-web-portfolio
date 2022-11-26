@@ -9,7 +9,7 @@ import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
 import { useRouter } from "next/router";
 
 const Navigation = () => {
-  const { pathname, asPath } = useRouter();
+  const { asPath } = useRouter();
 
   const links: LinkType[] = [
     { Icon: HiHome, label: "Home", to: "/" },
