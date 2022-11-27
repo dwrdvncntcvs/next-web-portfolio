@@ -13,7 +13,9 @@ const IconsDisplay = () => {
     "react",
     "sass",
     "redux",
-    "yarn"
+    "yarn",
+    "npm",
+    "html5",
   ];
 
   return (

@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import React, { FC } from "react";
+import React, { FC, useCallback, useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { f_store } from "../configs/firebase";
 import { HomeModelData } from "../models/HomeData";
@@ -17,6 +17,7 @@ interface StaticProps {
 
 const Home: FC<StaticProps> = ({ data }) => {
   const { push } = useRouter();
+
   const hostname =
     typeof window !== "undefined" && window.location.hostname
       ? window.location.hostname
@@ -57,7 +58,16 @@ const Home: FC<StaticProps> = ({ data }) => {
         <div id={classes.home}>
           <section>
             <p>{data.greetings}</p>
-            <p>{data.name}</p>
+            <div className={classes.name}>
+              {data.name
+                .toUpperCase()
+                .split("")
+                .map((char, i) => (
+                  <div className={classes.span} key={i}>
+                    {char.trim() === "" ? "\u00A0" : char}
+                  </div>
+                ))}
+            </div>
             <p>{data.description}</p>
             <div className={classes["btn-group"]}>
               <button onClick={() => push(data.resume)}>RESUME</button>

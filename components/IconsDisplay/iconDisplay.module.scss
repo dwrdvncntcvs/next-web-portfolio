@@ -15,39 +15,47 @@
   z-index: 1;
 
   .angularjs {
-    @include flyAnimation(140px, 0s, 10s, 80px);
+    @include flyAnimation(140px, 0s, 12s, 80px);
   }
 
   .express {
-    @include flyAnimation(130px, 1s, 10s, -200px);
+    @include flyAnimation(130px, 1s, 12s, -200px);
   }
 
   .typescript {
-    @include flyAnimation(110px, 1s, 10s, 350px);
+    @include flyAnimation(110px, 2s, 12s, 350px);
   }
 
   .javascript {
-    @include flyAnimation(100px, 3s, 10s, 200px);
+    @include flyAnimation(100px, 3s, 12s, 200px);
   }
 
   .nodejs {
-    @include flyAnimation(120px, 4s, 10s, 500px);
+    @include flyAnimation(120px, 4s, 12s, 500px);
   }
 
   .react {
-    @include flyAnimation(170px, 5s, 10s, 0px);
+    @include flyAnimation(170px, 5s, 12s, 0px);
   }
 
   .sass {
-    @include flyAnimation(130px, 6s, 10s, 380px);
+    @include flyAnimation(130px, 6s, 12s, 380px);
   }
 
   .redux {
-    @include flyAnimation(140px, 7s, 10s, -50px);
+    @include flyAnimation(140px, 7s, 12s, -50px);
   }
 
   .yarn {
-    @include flyAnimation(110px, 8s, 10s, 250px);
+    @include flyAnimation(110px, 8s, 12s, 250px);
+  }
+
+  .npm {
+    @include flyAnimation(120px, 9s, 12s, 450px);
+  }
+
+  .html5 {
+    @include flyAnimation(100px, 10s, 12s, -150px);
   }
 }
 
@@ -55,6 +63,9 @@
   0% {
     opacity: 1;
     transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
   }
   100% {
     opacity: 0;

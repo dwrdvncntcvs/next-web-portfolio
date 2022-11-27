@@ -1,5 +1,39 @@
 @import "./global.scss";
 
+@keyframes greetingsAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes goingIn {
+  0% {
+    transition: all ease 1s;
+  }
+
+  100% {
+    opacity: 1;
+    position: relative;
+  }
+}
+
+@mixin animateCharacters($numberOfChars: 1) {
+  @for $i from 1 to $numberOfChars {
+    .span:nth-child(#{$i}) {
+      opacity: 0;
+      animation: goingIn 1s ease calc(#{$i}s / 4) forwards;
+      transition: all ease 0.2s;
+
+      &:hover {
+        transform: scale(1.3) rotate(-20deg) translateY(10px);
+      }
+    }
+  }
+}
+
 #home {
   @include flex(row, flex-start, flex-start);
   height: 100%;
@@ -9,6 +43,10 @@
     height: 100%;
     z-index: 2;
 
+    p {
+      user-select: none;
+    }
+
     p:nth-child(1) {
       font-size: 5rem;
       font-weight: 400;
@@ -16,11 +54,15 @@
       transform: translateY(50px);
     }
 
-    p:nth-child(2) {
+    .name {
+      @include flex(row, flex-start, flex-start);
+      user-select: none;
+      width: 100%;
       font-size: 6rem;
       font-weight: bold;
       color: $primary-color;
       transform: translateY(10px);
+      @include animateCharacters(15);
     }
 
     p:nth-child(3) {
