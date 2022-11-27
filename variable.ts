@@ -156,4 +156,9 @@ const SKILL_TYPE_VAR = {
   TECHNICAL: "technical",
 };
 
-export { SKILL_TYPE_VAR, TECHNICAL_ICON_VAR, SOFT_ICON_VAR };
+const HOSTNAME =
+  typeof window !== "undefined" && window.location.hostname
+    ? `${window.location.protocol}//${window.location.host}`
+    : "";
+
+export { SKILL_TYPE_VAR, TECHNICAL_ICON_VAR, SOFT_ICON_VAR, HOSTNAME };

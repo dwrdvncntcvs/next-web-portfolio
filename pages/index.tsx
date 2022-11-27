@@ -10,6 +10,7 @@ import { IconDisplay } from "../components";
 import { useRouter } from "next/router";
 import { ContentContainer } from "../layouts";
 import Head from "next/head";
+import { HOSTNAME } from "../variable";
 
 interface StaticProps {
   data: HomeModelData;
@@ -18,10 +19,6 @@ interface StaticProps {
 const Home: FC<StaticProps> = ({ data }) => {
   const { push } = useRouter();
 
-  const hostname =
-    typeof window !== "undefined" && window.location.hostname
-      ? window.location.hostname
-      : "";
   const socialMediaLinks: LinkType[] = [
     {
       Icon: SiFacebook,
@@ -48,11 +45,11 @@ const Home: FC<StaticProps> = ({ data }) => {
         <meta property="og:description" content={data.description} />
         <meta
           property="og:image"
-          content="https://2181-136-158-31-249.ngrok.io/_next/static/media/dwrdvncntcvs_logo.f13cb62f.png?w=256"
+          content={`${HOSTNAME}/_next/static/media/dwrdvncntcvs_logo.f13cb62f.png?w=256`}
         />
         <meta property="og:type" content="website" />
         <meta property="fb:app_id" content="864647734963796" />
-        <meta property="og:url" content={hostname} />
+        <meta property="og:url" content={HOSTNAME} />
       </Head>
       <ContentContainer>
         <div id={classes.home}>

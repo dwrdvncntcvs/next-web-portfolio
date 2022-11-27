@@ -8,16 +8,27 @@ import classes from "../../styles/skill.module.scss";
 import Head from "next/head";
 import { Soft } from "../../components/Skills";
 import Technical from "../../components/Skills/Technical/Technical";
+import { HOSTNAME } from "../../variable";
 
 interface SkillProps {
   data: Skill;
 }
 
 const Skills: FC<SkillProps> = ({ data }) => {
+  console.log("Host name: ", HOSTNAME)
   return (
     <>
       <Head>
         <title>Skills</title>
+        <meta property="og:title" content="Skills" />
+        <meta property="og:description" content={data.description} />
+        <meta
+          property="og:image"
+          content={`${HOSTNAME}/_next/static/media/dwrdvncntcvs_logo.f13cb62f.png?w=256`}
+        />
+        <meta property="og:type" content="website" />
+        <meta property="fb:app_id" content="864647734963796" />
+        <meta property="og:url" content={HOSTNAME} />
       </Head>
       <ContentContainer>
         <div id={classes.skills}>
