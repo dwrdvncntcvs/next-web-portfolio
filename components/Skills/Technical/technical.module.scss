@@ -19,6 +19,8 @@
       @include flex(row, flex-start, center);
       gap: 10px;
       width: 175px;
+      margin: 3px;
+      user-select: none;
 
       p {
         color: $quaternary-color;
@@ -27,6 +29,11 @@
       #icon {
         font-size: 65px;
         color: $quaternary-color;
+        transition: all ease 0.2s;
+
+        &:hover {
+          transform: rotateZ(-20deg) translateY(-10px);
+        }
       }
     }
   }
