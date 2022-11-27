@@ -23,6 +23,12 @@
       img {
         width: $logo-size;
         height: $logo-size;
+        transition: all ease 0.2s;
+
+        &:hover {
+          width: calc($logo-size + 20px);
+          height: calc($logo-size + 20px);
+        }
       }
     }
   }
