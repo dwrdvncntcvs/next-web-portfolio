@@ -12,6 +12,7 @@ import {
 } from "../../../components/Portfolio";
 import classes from "../../../styles/projectDetails.module.scss";
 import Head from "next/head";
+import { HOSTNAME } from "../../../variable";
 
 interface ProjectDetailsProps {
   data: string;
@@ -32,6 +33,12 @@ const ProjectDetails: FC<ProjectDetailsProps> = ({ data }) => {
     <>
       <Head>
         <title>{details.title}</title>
+        <meta property="og:title" content="Skills" />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={`${mainImage}w=256`} />
+        <meta property="og:type" content="website" />
+        <meta property="fb:app_id" content="864647734963796" />
+        <meta property="og:url" content={HOSTNAME} />
       </Head>
       <ContentContainer>
         <div className={classes.details}>
