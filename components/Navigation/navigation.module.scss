@@ -25,7 +25,7 @@
         height: $logo-size;
         transition: all ease 0.2s;
 
-        &:hover {
+        &:active {
           width: calc($logo-size + 25px);
           height: calc($logo-size + 25px);
         }
