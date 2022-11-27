@@ -12,7 +12,6 @@ interface SkillProps {
 }
 
 const Skills: FC<SkillProps> = ({ data }) => {
-  console.log("Data: ", data);
   const softSkill = data.soft.map(({ description, icon, title }) => {
     const { Icon } = getIcon<SoftIcon>(icon, SKILL_TYPE_VAR.SOFT);
     return (

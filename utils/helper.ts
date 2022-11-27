@@ -16,7 +16,6 @@ export interface SoftIcon {
 }
 
 const getIcon = <T = any>(iconName: string, type: string): T => {
-  console.log("Icon name: ", iconName);
   let icon: IconVar;
 
   if (type === SKILL_TYPE_VAR.SOFT)
