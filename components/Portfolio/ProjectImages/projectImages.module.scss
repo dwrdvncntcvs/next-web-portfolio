@@ -1,0 +1,24 @@
+@import "../../../styles/global.scss";
+
+.images {
+  @include flex(column);
+  gap: 20px;
+
+  .list {
+    @include flex();
+    flex-wrap: wrap;
+    gap: 10px;
+
+    img {
+      width: 49.2%;
+      object-fit: cover;
+      border-radius: 10px;
+      background-color: $secondary-color;
+      transition: all ease 0.2s;
+
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
+  }
+}

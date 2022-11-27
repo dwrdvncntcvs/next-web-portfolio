@@ -1,0 +1,33 @@
+@import "../../../styles/global.scss";
+
+.intro {
+  @include flex(column);
+  gap: 10px;
+
+  p {
+    font-size: 1.25rem;
+    color: $quaternary-color;
+  }
+
+  a {
+    @include flex(row, flex-start, center);
+
+    background-color: $secondary-color;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    color: $primary-color;
+    transition: all ease-out 0.2s;
+    font-size: 1rem;
+
+    #icon {
+      color: $quaternary-color;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

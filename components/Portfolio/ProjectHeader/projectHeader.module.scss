@@ -1,0 +1,55 @@
+@import "../../../styles/global.scss";
+
+.header {
+  @include flex(row, flex-start, flex-start);
+  position: relative;
+
+  img {
+    background-color: $secondary-color;
+    border-radius: 10px;
+  }
+
+  .btn-group {
+    @include flex();
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    .link {
+      @include flex(row, center, center);
+      border-radius: 100%;
+
+      width: 60px;
+      height: 60px;
+      font-size: 40px;
+      color: $quaternary-color;
+      background-color: transparent;
+      border: none;
+      transition: all ease 0.2s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+
+  .content {
+    @include flex(column, center);
+    align-self: flex-end;
+    padding: 30px 20px;
+
+    p {
+      color: $quaternary-color;
+    }
+
+    p:nth-child(2) {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    p:nth-child(3) {
+      font-style: italic;
+    }
+  }
+}

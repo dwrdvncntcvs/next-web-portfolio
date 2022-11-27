@@ -39,4 +39,7 @@ const generateDate = (date: Timestamp) => {
   return dayjs(newDate).format("MMMM YYYY");
 };
 
-export { getIcon, generateDate };
+const customImageLoader = ({ src, width }: { src: string; width: number }) =>
+  `${src}w=${width}`;
+
+export { getIcon, generateDate, customImageLoader };

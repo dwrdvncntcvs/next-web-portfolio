@@ -1,0 +1,29 @@
+@import "../../../styles/global.scss";
+
+.tech {
+  @include flex(column, flex-start, flex-start);
+  gap: 20px;
+  user-select: none;
+
+  ul {
+    @include flex(row, flex-start, flex-start);
+    gap: 10px;
+    flex-wrap: wrap;
+
+    li {
+      @include flex(row, center, center);
+      gap: 10px;
+      background-color: $secondary-color;
+      padding: 10px 20px;
+      border-radius: 25px;
+
+      #icon {
+        font-size: 40px;
+      }
+
+      span {
+        color: $quaternary-color;
+      }
+    }
+  }
+}
