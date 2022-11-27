@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import React, { FC, useCallback, useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
-import { f_store } from "../configs/firebase";
+import { db } from "../configs/firebase";
 import { HomeModelData } from "../models/HomeData";
 import classes from "../styles/home.module.scss";
 import { LinkType } from "../interfaces/navigation";
@@ -88,7 +88,7 @@ const Home: FC<StaticProps> = ({ data }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const homeCollection = collection(f_store, "home");
+  const homeCollection = collection(db, "home");
 
   const homeDocs = await getDocs(homeCollection);
   const [data] = homeDocs.docs.map((docs) => ({

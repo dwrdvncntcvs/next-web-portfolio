@@ -6,21 +6,31 @@ import {
 } from "../variable";
 import { IconType } from "react-icons";
 
-const getIcon = (iconName: string, type: string) => {
-  let icon: IconVar[];
+export interface TechnicalIcon {
+  Icon: IconType;
+  color: string;
+}
+
+export interface SoftIcon {
+  Icon: IconType;
+}
+
+const getIcon = <T = any>(iconName: string, type: string): T => {
+  console.log("Icon name: ", iconName);
+  let icon: IconVar;
 
   if (type === SKILL_TYPE_VAR.SOFT)
-    icon = SOFT_ICON_VAR.filter((icon) => icon.ref === iconName);
+    icon = SOFT_ICON_VAR.filter((icon) => icon.ref === iconName)[0];
 
   if (type === SKILL_TYPE_VAR.TECHNICAL)
-    icon = TECHNICAL_ICON_VAR.filter((icon) => icon.ref === iconName);
+    icon = TECHNICAL_ICON_VAR.filter((icon) => icon.ref === iconName)[0];
 
-  let iconObj: { Icon: IconType; color?: string };
+  if (icon! === undefined) throw new Error("Invalid icon name");
 
-  if (icon![0]["color"] === undefined) iconObj = { Icon: icon![0].value };
-  else iconObj = { Icon: icon![0].value, color: icon![0].color };
-
-  return icon!.length > 0 ? iconObj : null;
+  return {
+    Icon: icon.value,
+    color: icon.color,
+  } as T;
 };
 
 export { getIcon };
