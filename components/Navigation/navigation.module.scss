@@ -26,8 +26,8 @@
         transition: all ease 0.2s;
 
         &:hover {
-          width: calc($logo-size + 20px);
-          height: calc($logo-size + 20px);
+          width: calc($logo-size + 25px);
+          height: calc($logo-size + 25px);
         }
       }
     }

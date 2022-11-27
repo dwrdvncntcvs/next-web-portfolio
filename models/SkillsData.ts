@@ -5,13 +5,13 @@ export interface Skill {
   technical: TechnicalSkill[];
 }
 
-interface SoftSkill {
+export interface SoftSkill {
   icon: string;
   description: string;
   title: string;
 }
 
-interface TechnicalSkill {
+export interface TechnicalSkill {
   title: string;
   icon: string;
 }

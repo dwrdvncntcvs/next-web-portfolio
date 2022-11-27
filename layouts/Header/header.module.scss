@@ -1,0 +1,14 @@
+@import "../../styles/global.scss";
+
+.header {
+  h1 {
+    font-size: 5rem;
+    color: $primary-color;
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: $quaternary-color;
+    width: 70%;
+  }
+}

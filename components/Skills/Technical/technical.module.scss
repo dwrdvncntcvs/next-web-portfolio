@@ -1,0 +1,33 @@
+@import "../../../styles/global.scss";
+
+.technical {
+  @include flex(column, flex-start, flex-start);
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+
+  h2 {
+    font-size: 40px;
+    color: $primary-color;
+  }
+
+  .t_ul {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+
+    li {
+      @include flex(row, flex-start, center);
+      gap: 10px;
+      width: 175px;
+
+      p {
+        color: $quaternary-color;
+      }
+
+      #icon {
+        font-size: 65px;
+        color: $quaternary-color;
+      }
+    }
+  }
+}

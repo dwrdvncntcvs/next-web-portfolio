@@ -1,0 +1,15 @@
+@import "../styles/global.scss";
+
+#skills {
+  @include flex(column, flex-start, flex-start);
+  gap: 20px;
+
+  ul {
+    list-style-type: none;
+    gap: 20px;
+  }
+
+  .row-content {
+    @include flex(row, flex-start, flex-start);
+  }
+}
