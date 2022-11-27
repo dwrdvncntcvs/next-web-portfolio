@@ -5,6 +5,8 @@ import {
   TECHNICAL_ICON_VAR,
 } from "../variable";
 import { IconType } from "react-icons";
+import dayjs from "dayjs";
+import { Timestamp } from "firebase/firestore";
 
 export interface TechnicalIcon {
   Icon: IconType;
@@ -32,4 +34,9 @@ const getIcon = <T = any>(iconName: string, type: string): T => {
   } as T;
 };
 
-export { getIcon };
+const generateDate = (date: Timestamp) => {
+  const newDate = new Date(date.seconds * 1000);
+  return dayjs(newDate).format("MMMM YYYY");
+};
+
+export { getIcon, generateDate };

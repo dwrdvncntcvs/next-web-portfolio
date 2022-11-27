@@ -1,0 +1,25 @@
+@import "../../../styles//global.scss";
+
+.projects {
+  @include flex(row, flex-start, flex-start);
+  list-style-type: none;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  li {
+    @include flex(row, center, center);
+    background-color: $tertiary-color;
+    width: 300px;
+    height: 500px;
+    border-radius: 5px;
+    transition: all ease-out 0.2s;
+
+    &:hover {
+      outline: 4px solid $primary-color;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+}
