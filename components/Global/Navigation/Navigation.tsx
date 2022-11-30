@@ -2,11 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import classes from "./navigation.module.scss";
-import { HiHome, HiCode, HiUser, HiFolder, HiBriefcase, HiBookmark } from "react-icons/hi";
+import {
+  HiHome,
+  HiCode,
+  HiUser,
+  HiFolder,
+  HiBriefcase,
+  HiBookmark,
+} from "react-icons/hi";
 import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
 import { useRouter } from "next/router";
 import { app_logo } from "../../../assets/images";
 import { LinkType } from "../../../interfaces/navigation";
+import Tooltip from "../Tooltip/Tooltip";
 
 const Navigation = () => {
   const { asPath } = useRouter();
@@ -54,13 +62,11 @@ const Navigation = () => {
       <div className={classes.links}>
         {links.map(({ Icon, label, to }, i) => {
           return (
-            <Link
-              className={to === asPath ? classes.active : ""}
-              href={to}
-              key={i}
-            >
-              <Icon id={classes.icon} />
-            </Link>
+            <Tooltip title={label} key={i}>
+              <Link className={to === asPath ? classes.active : ""} href={to}>
+                <Icon id={classes.icon} />
+              </Link>
+            </Tooltip>
           );
         })}
       </div>
