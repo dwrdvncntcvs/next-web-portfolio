@@ -1,6 +1,6 @@
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { GetStaticPaths, GetStaticProps } from "next";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { db } from "../../../configs/firebase";
 import { ContentContainer } from "../../../layouts";
 import { ProjectDetailsData } from "../../../models/PortfolioData";
@@ -13,6 +13,8 @@ import {
 import classes from "../../../styles/projectDetails.module.scss";
 import Head from "next/head";
 import { HOSTNAME } from "../../../variable";
+import useViewImages from "../../../hooks/useViewImages";
+import { PreviewImages } from "../../../components/Images";
 
 interface ProjectDetailsProps {
   data: string;

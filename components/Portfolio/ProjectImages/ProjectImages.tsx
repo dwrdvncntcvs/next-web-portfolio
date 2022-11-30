@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React, { FC } from "react";
+import useViewImages from "../../../hooks/useViewImages";
 import { customImageLoader } from "../../../utils/helper";
+import { PreviewImages } from "../../Images";
 import classes from "./projectImages.module.scss";
 
 interface ProjectImagesProps {
@@ -8,6 +10,9 @@ interface ProjectImagesProps {
 }
 
 const ProjectImages: FC<ProjectImagesProps> = ({ images }) => {
+  const { selectImage, imagesArr, closeAction, isOpened } =
+    useViewImages(images);
+
   return (
     <section className={classes.images}>
       <h2>relevant images.</h2>
@@ -20,9 +25,15 @@ const ProjectImages: FC<ProjectImagesProps> = ({ images }) => {
             width={300}
             height={300}
             loader={customImageLoader}
+            onClick={selectImage.bind(null, i)}
           />
         ))}
       </div>
+      <PreviewImages
+        isShown={isOpened}
+        onClose={closeAction}
+        images={imagesArr}
+      />
     </section>
   );
 };

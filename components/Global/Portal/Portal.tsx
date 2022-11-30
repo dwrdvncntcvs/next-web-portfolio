@@ -15,11 +15,9 @@ const Portal: FC<PortalProps & PropsWithChildren> = ({
   elementId,
   children,
 }) => {
-  const ref = useRef<Element | null>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    ref.current = document.querySelector(`#${elementId}`);
     setMounted(true);
 
     return () => {
@@ -27,10 +25,9 @@ const Portal: FC<PortalProps & PropsWithChildren> = ({
     };
   }, [elementId]);
 
-  console.log("Doing something...");
-  console.log(ref.current);
-
-  return mounted && ref.current ? createPortal(children, ref.current) : null;
+  return mounted
+    ? createPortal(children, document.getElementById(elementId)!)
+    : null;
 };
 
 export default Portal;
