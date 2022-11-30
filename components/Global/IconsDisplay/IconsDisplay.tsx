@@ -1,6 +1,6 @@
 import React from "react";
-import { getIcon } from "../../utils/helper";
-import { SKILL_TYPE_VAR } from "../../variable";
+import { getIcon } from "../../../utils/helper";
+import { SKILL_TYPE_VAR } from "../../../variable";
 import classes from "./iconDisplay.module.scss";
 
 const IconsDisplay = () => {

@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { app_logo } from "../../assets/images";
-import { LinkType } from "../../interfaces/navigation";
 import classes from "./navigation.module.scss";
 import { HiHome, HiCode, HiUser, HiFolder } from "react-icons/hi";
 import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
 import { useRouter } from "next/router";
+import { app_logo } from "../../../assets/images";
+import { LinkType } from "../../../interfaces/navigation";
 
 const Navigation = () => {
   const { asPath } = useRouter();

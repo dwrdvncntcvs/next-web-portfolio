@@ -1,4 +1,4 @@
-@import "../../styles/global.scss";
+@import "../../../styles/global.scss";
 
 .navigation {
   @include flex(column, flex-start, flex-start);
@@ -6,7 +6,7 @@
   height: 100%;
   background-color: $tertiary-color;
   position: fixed;
-  z-index: 999;
+  z-index: 99;
 
   .title {
     @include flex(column, center, center);

@@ -6,7 +6,7 @@ import { HomeModelData } from "../models/HomeData";
 import classes from "../styles/home.module.scss";
 import { LinkType } from "../interfaces/navigation";
 import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
-import { IconDisplay } from "../components";
+import { IconDisplay } from "../components/Global";
 import { useRouter } from "next/router";
 import { ContentContainer } from "../layouts";
 import Head from "next/head";

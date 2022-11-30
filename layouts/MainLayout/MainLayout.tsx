@@ -1,5 +1,5 @@
 import React, { FC, PropsWithChildren } from "react";
-import { Navigation } from "../../components";
+import { Navigation } from "../../components/Global";
 import classes from "./mainLayout.module.scss";
 import { Poppins } from "@next/font/google";
 
