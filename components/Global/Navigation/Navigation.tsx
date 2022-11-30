@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import classes from "./navigation.module.scss";
-import { HiHome, HiCode, HiUser, HiFolder } from "react-icons/hi";
+import { HiHome, HiCode, HiUser, HiFolder, HiBriefcase } from "react-icons/hi";
 import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
 import { useRouter } from "next/router";
 import { app_logo } from "../../../assets/images";
@@ -15,6 +15,7 @@ const Navigation = () => {
     { Icon: HiHome, label: "Home", to: "/" },
     { Icon: HiCode, label: "Skills", to: "/skills" },
     { Icon: HiFolder, label: "Portfolio", to: "/portfolio" },
+    { Icon: HiBriefcase, label: "Experience", to: "/experiences" },
     { Icon: HiUser, label: "About Me", to: "/about-me" },
   ];
 

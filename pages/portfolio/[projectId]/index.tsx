@@ -42,18 +42,16 @@ const ProjectDetails: FC<ProjectDetailsProps> = ({ data }) => {
         <meta property="fb:app_id" content="864647734963796" />
         <meta property="og:url" content={HOSTNAME} />
       </Head>
-      <ContentContainer>
-        <div className={classes.details}>
-          <ProjectHeader
-            details={details}
-            mainImage={mainImage}
-            repository={repository}
-          />
-          <ProjectIntro description={description} appLink={appLink} />
-          <ProjectTech technologies={technologies} />
-          <ProjectImages images={images} />
-        </div>
-      </ContentContainer>
+      <div className={classes.details}>
+        <ProjectHeader
+          details={details}
+          mainImage={mainImage}
+          repository={repository}
+        />
+        <ProjectIntro description={description} appLink={appLink} />
+        <ProjectTech technologies={technologies} />
+        <ProjectImages images={images} />
+      </div>
     </>
   );
 };

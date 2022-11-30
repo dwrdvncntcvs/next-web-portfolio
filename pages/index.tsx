@@ -52,35 +52,33 @@ const Home: FC<StaticProps> = ({ data }) => {
         <meta property="fb:app_id" content="864647734963796" />
         <meta property="og:url" content={HOSTNAME} />
       </Head>
-      <ContentContainer>
-        <div id={classes.home}>
-          <section>
-            <p>{data.greetings}</p>
-            <div className={classes.name}>
-              {data.name
-                .toUpperCase()
-                .split("")
-                .map((char, i) => (
-                  <div className={classes.span} key={i}>
-                    {char.trim() === "" ? "\u00A0" : char}
-                  </div>
-                ))}
-            </div>
-            <p>{data.description}</p>
-            <div className={classes["btn-group"]}>
-              <button onClick={() => push(data.resume)}>RESUME</button>
-              {socialMediaLinks.map(({ Icon, to }, i) => (
-                <Link className={classes.btn} key={i} href={to} target="_blank">
-                  <Icon />
-                </Link>
+      <div id={classes.home}>
+        <section>
+          <p>{data.greetings}</p>
+          <div className={classes.name}>
+            {data.name
+              .toUpperCase()
+              .split("")
+              .map((char, i) => (
+                <div className={classes.span} key={i}>
+                  {char.trim() === "" ? "\u00A0" : char}
+                </div>
               ))}
-            </div>
-          </section>
-          <section>
-            <IconDisplay />
-          </section>
-        </div>
-      </ContentContainer>
+          </div>
+          <p>{data.description}</p>
+          <div className={classes["btn-group"]}>
+            <button onClick={() => push(data.resume)}>RESUME</button>
+            {socialMediaLinks.map(({ Icon, to }, i) => (
+              <Link className={classes.btn} key={i} href={to} target="_blank">
+                <Icon />
+              </Link>
+            ))}
+          </div>
+        </section>
+        <section>
+          <IconDisplay />
+        </section>
+      </div>
     </>
   );
 };

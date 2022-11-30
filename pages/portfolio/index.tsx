@@ -18,12 +18,10 @@ const Portfolio: FC<PortfolioProps> = ({ data }) => {
       <Head>
         <title>Portfolio</title>
       </Head>
-      <ContentContainer>
-        <section className={classes.portfolio}>
-          <Header title="portfolio." description={data.description} />
-          <Projects projects={data.projects} />
-        </section>
-      </ContentContainer>
+      <section className={classes.portfolio}>
+        <Header title="portfolio." description={data.description} />
+        <Projects projects={data.projects} />
+      </section>
     </>
   );
 };

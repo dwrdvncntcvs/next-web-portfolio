@@ -15,7 +15,6 @@ interface SkillProps {
 }
 
 const Skills: FC<SkillProps> = ({ data }) => {
-  console.log("Host name: ", HOSTNAME)
   return (
     <>
       <Head>
@@ -30,15 +29,13 @@ const Skills: FC<SkillProps> = ({ data }) => {
         <meta property="fb:app_id" content="864647734963796" />
         <meta property="og:url" content={HOSTNAME} />
       </Head>
-      <ContentContainer>
-        <div id={classes.skills}>
-          <Header description={data.description} title="skills." />
-          <div className={classes["row-content"]}>
-            <Soft softSkills={data.soft} />
-            <Technical technicalSkills={data.technical} />
-          </div>
+      <div id={classes.skills}>
+        <Header description={data.description} title="skills." />
+        <div className={classes["row-content"]}>
+          <Soft softSkills={data.soft} />
+          <Technical technicalSkills={data.technical} />
         </div>
-      </ContentContainer>
+      </div>
     </>
   );
 };
