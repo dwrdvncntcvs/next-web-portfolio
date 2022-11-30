@@ -75,23 +75,24 @@
       gap: 10px;
 
       button:nth-child(1) {
-        width: 400px;
+        @extend .btn;
+        width: 400px !important;
         height: 65px;
-        border-radius: 50px;
+        border-radius: 50px !important;
         font-size: 20px;
         font-weight: 700;
-        color: $secondary-color;
-        background-color: $quaternary-color;
+        color: $secondary-color !important;
+        background-color: $quaternary-color !important;
 
         &:hover {
-          color: $quaternary-color;
-          background-color: $primary-color;
+          color: $quaternary-color !important;
+          background-color: $primary-color !important;
           letter-spacing: 6px;
           border-color: $primary-color;
         }
       }
 
-      button {
+      .btn {
         @include flex(column, center, center);
         width: 65px;
         height: 65px;

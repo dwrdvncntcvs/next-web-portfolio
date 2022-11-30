@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 import { ContentContainer } from "../layouts";
 import Head from "next/head";
 import { HOSTNAME } from "../variable";
+import Link from "next/link";
 
 interface StaticProps {
   data: HomeModelData;
@@ -69,9 +70,9 @@ const Home: FC<StaticProps> = ({ data }) => {
             <div className={classes["btn-group"]}>
               <button onClick={() => push(data.resume)}>RESUME</button>
               {socialMediaLinks.map(({ Icon, to }, i) => (
-                <button key={i} onClick={() => push(to)}>
+                <Link className={classes.btn} key={i} href={to} target="_blank">
                   <Icon />
-                </button>
+                </Link>
               ))}
             </div>
           </section>
