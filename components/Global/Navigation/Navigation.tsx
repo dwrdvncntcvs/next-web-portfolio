@@ -68,9 +68,9 @@ const Navigation = () => {
         </p>
         <div className={classes["social-links"]}>
           {socialMediaLinks.map(({ Icon, label, to }, i) => (
-            <a key={i} href={to}>
+            <Link key={i} href={to} target="_blank">
               <Icon id={classes["social-icon"]} />
-            </a>
+            </Link>
           ))}
         </div>
       </div>

@@ -14,7 +14,7 @@ const ProjectIntro: FC<ProjectIntroProps> = ({ description, appLink }) => {
       <h2>description.</h2>
       <p>{description}</p>
       {appLink ? (
-        <Link href={appLink}>
+        <Link href={appLink} target="_blank">
           <HiLink id={classes.icon} /> {appLink}
         </Link>
       ) : null}
