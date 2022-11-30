@@ -24,7 +24,7 @@ const Navigation = () => {
     { Icon: HiCode, label: "Skills", to: "/skills" },
     { Icon: HiFolder, label: "Portfolio", to: "/portfolio" },
     { Icon: HiBriefcase, label: "Experience", to: "/experiences" },
-    { Icon: HiBookmark, label: "Experience", to: "/certificates" },
+    { Icon: HiBookmark, label: "Certificates", to: "/certificates" },
     { Icon: HiUser, label: "About Me", to: "/about-me" },
   ];
 
