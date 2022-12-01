@@ -1,0 +1,87 @@
+@import "./global.scss";
+
+.experience {
+  @include flex(column);
+  gap: 40px;
+  height: 100%;
+
+  h2,
+  h3,
+  p,
+  a,
+  li,
+  address {
+    @include flex(row, flex-start, center);
+    gap: 5px;
+  }
+
+  .content {
+    @include flex(row);
+    width: 100%;
+    gap: 30px;
+
+    img {
+      border-radius: 10px;
+      background-color: $tertiary-color;
+    }
+
+    .details {
+      @include flex(column);
+      gap: 10px;
+      height: 100%;
+      color: $quaternary-color;
+      position: relative;
+
+      .intro {
+        @include flex(column);
+        gap: 5px;
+
+        h2 {
+          font-size: 3rem;
+          color: $primary-color;
+        }
+
+        address {
+          font-size: 1rem;
+        }
+
+        p {
+          font-size: 1.25rem;
+        }
+
+        #icon {
+          font-size: 20px;
+        }
+
+        a {
+          transition: all ease 0.2s;
+          &:hover {
+            color: $primary-color;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      ul {
+        @include flex(column);
+        gap: 10px;
+        list-style-type: none;
+        padding-left: 10px;
+
+        .positions {
+          h3 {
+            font-size: 2rem;
+          }
+
+          .tasks {
+            @include flex(column);
+            gap: 10px;
+            list-style-type: none;
+            padding-left: 40px;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../../styles/global.scss";
+
+.experiences {
+  @include flex(row, flex-start, flex-start);
+  list-style-type: none;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  a {
+    @include flex(column, center, center);
+    background-color: $tertiary-color;
+    width: 300px;
+    height: 500px;
+    border-radius: 5px;
+    transition: all ease-out 0.2s;
+    position: relative;
+
+    &:hover {
+      outline: 4px solid $primary-color;
+    }
+
+    img {
+      object-fit: cover;
+    }
+
+    p {
+      white-space: pre;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translate(-50%);
+      color: $secondary-color;
+      font-size: 20px;
+    }
+  }
+}

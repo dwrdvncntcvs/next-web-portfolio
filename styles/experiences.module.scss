@@ -1,0 +1,15 @@
+@import "./global.scss";
+
+.experience {
+  @include flex(column);
+  height: 100%;
+  gap: 20px;
+
+  .content {
+    @include flex(row);
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    border-radius: 10px;
+  }
+}

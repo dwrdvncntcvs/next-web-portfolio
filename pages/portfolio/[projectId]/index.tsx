@@ -1,8 +1,7 @@
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { GetStaticPaths, GetStaticProps } from "next";
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { db } from "../../../configs/firebase";
-import { ContentContainer } from "../../../layouts";
 import { ProjectDetailsData } from "../../../models/PortfolioData";
 import {
   ProjectHeader,
@@ -13,11 +12,9 @@ import {
 import classes from "../../../styles/projectDetails.module.scss";
 import Head from "next/head";
 import { HOSTNAME } from "../../../variable";
-import useViewImages from "../../../hooks/useViewImages";
-import { PreviewImages } from "../../../components/Images";
 
 interface ProjectDetailsProps {
-  data: string;
+  data: ProjectDetailsData;
 }
 
 const ProjectDetails: FC<ProjectDetailsProps> = ({ data }) => {
@@ -29,12 +26,12 @@ const ProjectDetails: FC<ProjectDetailsProps> = ({ data }) => {
     mainImage,
     repository,
     technologies,
-  } = JSON.parse(data) as ProjectDetailsData;
+  } = data;
 
   return (
     <>
       <Head>
-        <title>{details.title}</title>
+        <title>Portfolio | {details.title}</title>
         <meta property="og:title" content="Skills" />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={`${mainImage}w=256`} />
@@ -71,11 +68,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const portfolioDetails = await getDoc(portfolioRef);
   const docData = portfolioDetails.data();
 
-  const data = JSON.stringify({
-    ...{
-      ...docData,
+  const data = {
+    ...docData,
+    details: {
+      ...docData?.details,
+      createdAt: JSON.stringify(docData?.details.createdAt),
+      endedAt: JSON.stringify(docData?.details.endedAt),
     },
-  });
+  };
 
   return { props: { data } };
 };

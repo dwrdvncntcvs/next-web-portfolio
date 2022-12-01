@@ -34,8 +34,8 @@ const getIcon = <T = any>(iconName: string, type: string): T => {
   } as T;
 };
 
-const generateDate = (date: Timestamp) => {
-  const newDate = new Date(date.seconds * 1000);
+const generateDate = (date: string) => {
+  const newDate = new Date(JSON.parse(date).seconds * 1000);
   return dayjs(newDate).format("MMMM YYYY");
 };
 
