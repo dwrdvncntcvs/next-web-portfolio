@@ -32,7 +32,7 @@ const ProjectDetails: FC<ProjectDetailsProps> = ({ data }) => {
     <>
       <Head>
         <title>Portfolio | {details.title}</title>
-        <meta property="og:title" content="Skills" />
+        <meta property="og:title" content={`Portfolio | ${details.title}`} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={`${mainImage}w=256`} />
         <meta property="og:type" content="website" />
