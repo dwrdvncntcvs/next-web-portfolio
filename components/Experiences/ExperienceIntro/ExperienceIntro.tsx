@@ -22,9 +22,7 @@ const ExperienceIntro: FC<ExperienceIntroProps> = ({
       <p>
         <HiCalendar id={classes.icon} />{" "}
         {generateDate(experienceMeta.dateStarted.toString())} -{" "}
-        {experienceMeta.dateEnded.toString() === ""
-          ? generateDate(experienceMeta.dateEnded.toString())
-          : "Present"}
+        {generateDate(experienceMeta.dateEnded.toString())}
       </p>
       <address>
         <HiLocationMarker id={classes.icon} /> {experienceMeta.address}
