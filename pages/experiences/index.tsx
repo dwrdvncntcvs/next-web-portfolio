@@ -1,15 +1,12 @@
 import { collection, getDocs } from "firebase/firestore";
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import React, { FC } from "react";
-import ExperiencesList from "../../components/Experiences/ExperiencesList/ExperiencesList";
+import { ExperiencesList } from "../../components/Experiences";
 import { db } from "../../configs/firebase";
 import { Header } from "../../layouts";
 import { Experience } from "../../models/ExperienceData";
 import classes from "../../styles/experiences.module.scss";
-import { customImageLoader } from "../../utils/helper";
 
 interface ExperiencesProps {
   data?: Experience;
