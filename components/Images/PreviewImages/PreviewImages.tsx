@@ -65,13 +65,15 @@ const PreviewImages: FC<PreviewImagesProps> = ({
           </button>
         ) : null}
 
-        <Image
-          src={selectedImage?.image!}
-          alt={`image-${selectedImage?.id!}`}
-          width={200}
-          height={200}
-          loader={customImageLoader}
-        />
+        <div className={classes.image}>
+          <Image
+            src={selectedImage?.image!}
+            alt={`image-${selectedImage?.id!}`}
+            width={200}
+            height={200}
+            loader={customImageLoader}
+          />
+        </div>
 
         {navRight ? (
           <button className={classes.right} onClick={navigateRight}>
