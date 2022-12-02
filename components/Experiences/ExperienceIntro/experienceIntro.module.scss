@@ -1,0 +1,31 @@
+@import "../../../styles/global.scss";
+
+.intro {
+  @include flex(column);
+  gap: 5px;
+
+  h2 {
+    font-size: 3rem;
+    color: $primary-color;
+  }
+
+  address {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  #icon {
+    font-size: 20px;
+  }
+
+  a {
+    transition: all ease 0.2s;
+    &:hover {
+      color: $primary-color;
+      text-decoration: underline;
+    }
+  }
+}

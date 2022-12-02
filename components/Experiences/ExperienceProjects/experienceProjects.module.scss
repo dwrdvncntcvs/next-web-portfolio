@@ -1,0 +1,22 @@
+@import "../../../styles/global.scss";
+
+.projects {
+  @include flex(column);
+  gap: 10px;
+  list-style-type: none;
+  padding-left: 10px;
+
+  .positions {
+    h3 {
+      font-size: 2rem;
+    }
+
+    .tasks {
+      @include flex(column);
+      gap: 10px;
+      list-style-type: none;
+      padding-left: 40px;
+      position: relative;
+    }
+  }
+}

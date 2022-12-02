@@ -20,7 +20,6 @@ const ExperiencesList: FC<ExperiencesListProps> = ({ experiences }) => {
             height={300}
             loader={({ src, width }) => `${src}w?=${width}`}
           />
-          <p>{companyName}</p>
         </Link>
       ))}
     </ul>

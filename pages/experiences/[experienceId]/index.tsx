@@ -15,6 +15,10 @@ import {
   HiLink,
 } from "react-icons/hi";
 import Link from "next/link";
+import {
+  ExperienceIntro,
+  ExperienceProjects,
+} from "../../../components/Experiences";
 
 interface ExperienceDetailsProps {
   data: ExperienceData;
@@ -38,43 +42,12 @@ const ExperienceDetails: FC<ExperienceDetailsProps> = ({ data }) => {
             loader={customImageLoader}
           />
           <div className={classes.details}>
-            <div className={classes.intro}>
-              <h2>{data.position}</h2>
-              <p>
-                <HiCalendar id={classes.icon} />{" "}
-                {generateDate(data.meta.dateStarted.toString())} -{" "}
-                {data.meta.dateEnded.toString() === ""
-                  ? generateDate(data.meta.dateEnded.toString())
-                  : "Present"}
-              </p>
-              <address>
-                <HiLocationMarker id={classes.icon} /> {data.meta.address}
-              </address>
-              {data.companyLink ? (
-                <Link href={data.companyLink} target="_blank">
-                  <HiLink id={classes.icon} />
-                  {data.companyLink}
-                </Link>
-              ) : null}
-            </div>
-            <ul>
-              {data?.positions?.map(({ tasks, title }) => (
-                <li className={classes.positions} key={title}>
-                  <ul>
-                    <h3>
-                      <HiChevronRight /> {title}
-                    </h3>
-                    <ul className={classes.tasks}>
-                      {tasks?.map((task) => (
-                        <li className={classes.task} key={task}>
-                          <HiChevronRight /> {task}
-                        </li>
-                      ))}
-                    </ul>
-                  </ul>
-                </li>
-              ))}
-            </ul>
+            <ExperienceIntro
+              companyLink={data?.companyLink}
+              experienceMeta={data.meta}
+              position={data.position}
+            />
+            <ExperienceProjects projects={data?.positions} />
           </div>
         </div>
       </section>
