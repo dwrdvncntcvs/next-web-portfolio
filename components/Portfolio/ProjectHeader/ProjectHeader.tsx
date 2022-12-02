@@ -38,9 +38,7 @@ const ProjectHeader: FC<ProjectHeaderProps> = ({
         <p>{details.role}</p>
         <p>
           {generateDate(details.createdAt.toString())} -{" "}
-          {details.endedAt.toString() === ""
-            ? generateDate(details.endedAt.toString())
-            : "Present"}
+          {generateDate(details.endedAt.toString())}
         </p>
       </div>
     </section>
