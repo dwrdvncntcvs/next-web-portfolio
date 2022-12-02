@@ -36,7 +36,12 @@ const getIcon = <T = any>(iconName: string, type: string): T => {
 
 const generateDate = (date: string) => {
   const newDate = new Date(JSON.parse(date).seconds * 1000);
-  return dayjs(newDate).format("MMMM YYYY");
+
+  console.log();
+
+  return newDate.toString() === "Invalid Date"
+    ? "Present"
+    : dayjs(newDate).format("MMMM YYYY");
 };
 
 const customImageLoader = ({ src, width }: { src: string; width: number }) =>
