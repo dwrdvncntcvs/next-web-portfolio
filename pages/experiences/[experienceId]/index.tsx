@@ -6,15 +6,8 @@ import React, { FC } from "react";
 import { db } from "../../../configs/firebase";
 import { Header } from "../../../layouts";
 import { Experience, ExperienceData } from "../../../models/ExperienceData";
-import { customImageLoader, generateDate } from "../../../utils/helper";
+import { customImageLoader } from "../../../utils/helper";
 import classes from "../../../styles/experience.module.scss";
-import {
-  HiCalendar,
-  HiLocationMarker,
-  HiChevronRight,
-  HiLink,
-} from "react-icons/hi";
-import Link from "next/link";
 import {
   ExperienceIntro,
   ExperienceProjects,
@@ -31,7 +24,10 @@ const ExperienceDetails: FC<ExperienceDetailsProps> = ({ data }) => {
         <title>Experience | {data.companyName}</title>
       </Head>
       <section className={classes.experience}>
-        <Header description={data.description} title={data.companyName} />
+        <Header
+          description={`"${data.description}"`}
+          title={data.companyName}
+        />
 
         <div className={classes.content}>
           <Image
