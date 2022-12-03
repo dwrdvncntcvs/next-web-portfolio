@@ -1,5 +1,5 @@
 import React, { FC, PropsWithChildren } from "react";
-import Portal from "../Portal/Portal";
+import Portal from "components/Global/Portal/Portal";
 import classes from "./modalOverlay.module.scss";
 
 interface ModalOverlyProps {

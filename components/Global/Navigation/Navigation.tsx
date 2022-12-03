@@ -12,9 +12,9 @@ import {
 } from "react-icons/hi";
 import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
 import { useRouter } from "next/router";
-import { app_logo } from "../../../assets/images";
-import { LinkType } from "../../../interfaces/navigation";
-import Tooltip from "../Tooltip/Tooltip";
+import { app_logo } from "assets/images";
+import { LinkType } from "interfaces/navigation";
+import Tooltip from "components/Global/Tooltip/Tooltip";
 
 const Navigation = () => {
   const { asPath } = useRouter();

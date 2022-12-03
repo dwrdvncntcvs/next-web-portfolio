@@ -2,11 +2,11 @@ import { collection, getDocs } from "firebase/firestore";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import React, { FC } from "react";
-import { Projects } from "../../components/Portfolio";
-import { db } from "../../configs/firebase";
-import { ContentContainer, Header } from "../../layouts";
-import { PortfolioData } from "../../models/PortfolioData";
-import classes from "../../styles/portfolio.module.scss";
+import { Projects } from "components/Portfolio";
+import { db } from "configs/firebase";
+import { Header } from "layouts";
+import { PortfolioData } from "models/PortfolioData";
+import classes from "styles/portfolio.module.scss";
 
 interface PortfolioProps {
   data: PortfolioData;

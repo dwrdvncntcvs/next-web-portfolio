@@ -1,17 +1,17 @@
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { GetStaticPaths, GetStaticProps } from "next";
 import React, { FC } from "react";
-import { db } from "../../../configs/firebase";
-import { ProjectDetailsData } from "../../../models/PortfolioData";
+import { db } from "configs/firebase";
+import { ProjectDetailsData } from "models/PortfolioData";
 import {
   ProjectHeader,
   ProjectImages,
   ProjectIntro,
   ProjectTech,
-} from "../../../components/Portfolio";
-import classes from "../../../styles/projectDetails.module.scss";
+} from "components/Portfolio";
+import classes from "styles/projectDetails.module.scss";
 import Head from "next/head";
-import { HOSTNAME } from "../../../variable";
+import { HOSTNAME } from "variables";
 
 interface ProjectDetailsProps {
   data: ProjectDetailsData;

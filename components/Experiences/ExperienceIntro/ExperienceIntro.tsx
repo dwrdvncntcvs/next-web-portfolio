@@ -1,8 +1,8 @@
+import { ExperienceMeta } from "models/ExperienceData";
 import Link from "next/link";
 import React, { FC } from "react";
 import { HiCalendar, HiLink, HiLocationMarker } from "react-icons/hi";
-import { ExperienceMeta } from "../../../models/ExperienceData";
-import { generateDate } from "../../../utils/helper";
+import { generateDate } from "utils/helper";
 import classes from "./experienceIntro.module.scss";
 
 interface ExperienceIntroProps {

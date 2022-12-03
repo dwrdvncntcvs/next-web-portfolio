@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { FC, useCallback, useEffect, useState } from "react";
-import { customImageLoader } from "../../../utils/helper";
-import { ModalOverlay } from "../../Global";
+import { customImageLoader } from "utils/helper";
+import { ModalOverlay } from "components/Global";
 import classes from "./previewImages.module.scss";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 

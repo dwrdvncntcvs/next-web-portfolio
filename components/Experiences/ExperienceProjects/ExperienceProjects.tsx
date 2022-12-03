@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import classes from "./experienceProjects.module.scss";
-import { CompanyPosition } from "../../../models/ExperienceData";
+import { CompanyPosition } from "models/ExperienceData";
 import { HiChevronRight } from "react-icons/hi";
 
 interface ExperienceProjectsProps {

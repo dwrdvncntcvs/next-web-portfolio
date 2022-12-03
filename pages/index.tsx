@@ -1,16 +1,15 @@
 import { GetStaticProps } from "next";
-import React, { FC, useCallback, useEffect, useState } from "react";
+import React, { FC } from "react";
 import { getDocs, collection } from "firebase/firestore";
-import { db } from "../configs/firebase";
-import { HomeModelData } from "../models/HomeData";
-import classes from "../styles/home.module.scss";
-import { LinkType } from "../interfaces/navigation";
+import { db } from "configs/firebase";
+import { HomeModelData } from "models/HomeData";
+import classes from "styles/home.module.scss";
+import { LinkType } from "interfaces/navigation";
 import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
-import { IconDisplay } from "../components/Global";
+import { IconDisplay } from "components/Global";
 import { useRouter } from "next/router";
-import { ContentContainer } from "../layouts";
 import Head from "next/head";
-import { HOSTNAME } from "../variable";
+import { HOSTNAME } from "variables";
 import Link from "next/link";
 
 interface StaticProps {

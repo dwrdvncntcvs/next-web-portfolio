@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React, { FC } from "react";
-import useViewImages from "../../../hooks/useViewImages";
-import { customImageLoader } from "../../../utils/helper";
-import { PreviewImages } from "../../Images";
+import useViewImages from "hooks/useViewImages";
+import { customImageLoader } from "utils/helper";
+import { PreviewImages } from "components/Images";
 import classes from "./projectImages.module.scss";
 
 interface ProjectImagesProps {

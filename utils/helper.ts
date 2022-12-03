@@ -3,10 +3,9 @@ import {
   SKILL_TYPE_VAR,
   SOFT_ICON_VAR,
   TECHNICAL_ICON_VAR,
-} from "../variable";
+} from "variables";
 import { IconType } from "react-icons";
 import dayjs from "dayjs";
-import { Timestamp } from "firebase/firestore";
 
 export interface TechnicalIcon {
   Icon: IconType;

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import { TechnicalSkill } from "../../../models/SkillsData";
-import { getIcon, TechnicalIcon } from "../../../utils/helper";
-import { SKILL_TYPE_VAR } from "../../../variable";
+import { TechnicalSkill } from "models/SkillsData";
+import { getIcon, TechnicalIcon } from "utils/helper";
+import { SKILL_TYPE_VAR } from "variables";
 import classes from "./technical.module.scss";
 
 interface TechnicalProps {
