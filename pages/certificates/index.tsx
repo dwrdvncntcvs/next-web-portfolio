@@ -3,13 +3,13 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import React, { FC } from "react";
-import { PreviewImages } from "../../components/Images";
-import { db } from "../../configs/firebase";
-import useViewImages from "../../hooks/useViewImages";
-import { Header } from "../../layouts";
-import { CertificateData } from "../../models/CertificateData";
-import classes from "../../styles/certificates.module.scss";
-import { customImageLoader } from "../../utils/helper";
+import { PreviewImages } from "components/Images";
+import { db } from "configs/firebase";
+import useViewImages from "hooks/useViewImages";
+import { Header } from "layouts";
+import { CertificateData } from "models/CertificateData";
+import classes from "styles/certificates.module.scss";
+import { customImageLoader } from "utils/helper";
 
 interface CertificatesProps {
   data: CertificateData;

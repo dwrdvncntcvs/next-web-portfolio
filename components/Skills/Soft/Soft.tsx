@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import { SoftSkill } from "../../../models/SkillsData";
-import { getIcon, SoftIcon } from "../../../utils/helper";
-import { SKILL_TYPE_VAR } from "../../../variable";
+import { SoftSkill } from "models/SkillsData";
+import { getIcon, SoftIcon } from "utils/helper";
+import { SKILL_TYPE_VAR } from "variables";
 import classes from "./soft.module.scss";
 
 interface SoftProps {

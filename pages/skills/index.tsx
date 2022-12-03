@@ -1,14 +1,13 @@
 import { collection, getDocs } from "firebase/firestore";
 import { GetStaticProps } from "next";
 import React, { FC } from "react";
-import { db } from "../../configs/firebase";
-import { ContentContainer, Header } from "../../layouts";
-import { Skill } from "../../models/SkillsData";
-import classes from "../../styles/skill.module.scss";
+import { db } from "configs/firebase";
+import { Header } from "layouts";
+import { Skill } from "models/SkillsData";
+import classes from "styles/skill.module.scss";
 import Head from "next/head";
-import { Soft } from "../../components/Skills";
-import Technical from "../../components/Skills/Technical/Technical";
-import { HOSTNAME } from "../../variable";
+import { Soft, Technical } from "components/Skills";
+import { HOSTNAME } from "variables";
 
 interface SkillProps {
   data: Skill;

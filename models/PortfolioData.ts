@@ -1,5 +1,4 @@
 import { Timestamp } from "firebase/firestore";
-import { TechnicalIcon } from "../utils/helper";
 
 export interface PortfolioData {
   id: string;

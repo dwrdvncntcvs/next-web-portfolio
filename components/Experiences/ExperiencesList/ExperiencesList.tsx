@@ -1,7 +1,7 @@
+import { ExperienceItem } from "models/ExperienceData";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
-import { ExperienceItem } from "../../../models/ExperienceData";
 import classes from "./experiencesList.module.scss";
 
 interface ExperiencesListProps {

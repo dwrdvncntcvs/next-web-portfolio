@@ -3,15 +3,12 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import React, { FC } from "react";
-import { db } from "../../../configs/firebase";
-import { Header } from "../../../layouts";
-import { Experience, ExperienceData } from "../../../models/ExperienceData";
-import { customImageLoader } from "../../../utils/helper";
-import classes from "../../../styles/experience.module.scss";
-import {
-  ExperienceIntro,
-  ExperienceProjects,
-} from "../../../components/Experiences";
+import { db } from "configs/firebase";
+import { Header } from "layouts";
+import { Experience, ExperienceData } from "models/ExperienceData";
+import { customImageLoader } from "utils/helper";
+import classes from "styles/experience.module.scss";
+import { ExperienceIntro, ExperienceProjects } from "components/Experiences";
 
 interface ExperienceDetailsProps {
   data: ExperienceData;
