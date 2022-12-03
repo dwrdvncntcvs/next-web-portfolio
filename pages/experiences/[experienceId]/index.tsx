@@ -9,6 +9,7 @@ import { Experience, ExperienceData } from "models/ExperienceData";
 import { customImageLoader } from "utils/helper";
 import classes from "styles/experience.module.scss";
 import { ExperienceIntro, ExperienceProjects } from "components/Experiences";
+import { HOSTNAME } from "variables";
 
 interface ExperienceDetailsProps {
   data: ExperienceData;

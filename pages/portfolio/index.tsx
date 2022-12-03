@@ -7,6 +7,8 @@ import { db } from "configs/firebase";
 import { Header } from "layouts";
 import { PortfolioData } from "models/PortfolioData";
 import classes from "styles/portfolio.module.scss";
+import { app_logo } from "assets/images";
+import { HOSTNAME } from "variables";
 
 interface PortfolioProps {
   data: PortfolioData;
@@ -17,6 +19,12 @@ const Portfolio: FC<PortfolioProps> = ({ data }) => {
     <>
       <Head>
         <title>Portfolio</title>
+        <meta property="og:title" content={`Portfolio`} />
+        <meta property="og:description" content={data.description} />
+        <meta property="og:image" content={`${app_logo}w=256`} />
+        <meta property="og:type" content="website" />
+        <meta property="fb:app_id" content="864647734963796" />
+        <meta property="og:url" content={HOSTNAME} />
       </Head>
       <section className={classes.portfolio}>
         <Header title="portfolio." description={data.description} />
