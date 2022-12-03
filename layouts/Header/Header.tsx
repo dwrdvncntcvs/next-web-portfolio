@@ -3,7 +3,7 @@ import classes from "./header.module.scss";
 
 interface HeaderProps {
   title: string;
-  description: string;
+  description?: string;
 }
 
 const Header: FC<HeaderProps> = ({ description, title }) => {
