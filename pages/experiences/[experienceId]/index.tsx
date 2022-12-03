@@ -19,6 +19,15 @@ const ExperienceDetails: FC<ExperienceDetailsProps> = ({ data }) => {
     <>
       <Head>
         <title>Experience | {data.companyName}</title>
+        <meta
+          property="og:title"
+          content={`Experience | ${data.companyName}`}
+        />
+        <meta property="og:description" content={data.description} />
+        <meta property="og:image" content={`${data.companyLogo}w=256`} />
+        <meta property="og:type" content="website" />
+        <meta property="fb:app_id" content="864647734963796" />
+        <meta property="og:url" content={HOSTNAME} />
       </Head>
       <section className={classes.experience}>
         <Header
