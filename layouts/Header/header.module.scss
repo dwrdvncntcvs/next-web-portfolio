@@ -1,14 +1,27 @@
 @import "styles/global.scss";
 
 .header {
+  h1,
+  p {
+    transition: all ease 0.2s;
+  }
+
   h1 {
     font-size: 5rem;
     color: $primary-color;
+
+    @include desktop {
+      font-size: 4rem;
+    }
   }
 
   p {
     font-size: 1.5rem;
     color: $quaternary-color;
     width: 70%;
+
+    @include desktop {
+      font-size: 1.25rem;
+    }
   }
 }

@@ -35,11 +35,20 @@
 }
 
 .details {
+  p,
+  .name {
+    transition: all ease 0.2s;
+  }
+
   p:nth-child(1) {
     font-size: 4rem;
     font-weight: 700;
     color: $quaternary-color;
     transform: translateY(50px);
+
+    @include desktop {
+      font-size: 3rem;
+    }
   }
 
   .name {
@@ -51,10 +60,19 @@
     color: $primary-color;
     transform: translateY(10px);
     @include animateCharacters(15);
+
+    @include desktop {
+      font-size: 5rem;
+      transform: translateY(15px);
+    }
   }
 
   p:nth-child(3) {
     font-size: 2rem;
     color: $quaternary-color;
+
+    @include desktop {
+      font-size: 1.5rem;
+    }
   }
 }

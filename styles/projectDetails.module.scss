@@ -15,6 +15,16 @@
     padding: 30px;
     border-radius: 10px;
 
+    transition: all ease 0.2s;
+
+    @include MDdesktop {
+      width: 80%;
+    }
+
+    @include desktop {
+      width: 100%;
+    }
+
     h1 {
       color: $primary-color;
       font-size: 3.5rem;

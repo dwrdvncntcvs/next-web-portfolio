@@ -1,7 +1,6 @@
 @mixin flyAnimation($size: 50px, $delay: 0s, $duration: 25s, $left: 100px) {
   position: absolute;
   overflow: hidden;
-  bottom: -400px;
   font-size: $size;
   animation: flying $duration linear infinite;
   animation-delay: $delay;
@@ -10,9 +9,11 @@
 
 .icons {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  width: 500px;
+  height: 200px;
+  right: 200px;
+  bottom: -400px;
+  background-color: gray;
 
   .angularjs {
     @include flyAnimation(140px, 0s, 12s, 80px);

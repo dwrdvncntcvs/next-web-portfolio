@@ -25,7 +25,7 @@ const Technical: FC<TechnicalProps> = ({ technicalSkills }) => {
 
   return (
     <section className={classes.technical}>
-      <h2>soft skills.</h2>
+      <h2>technical.</h2>
       <ul className={classes.t_ul}>{technicalSkill}</ul>
     </section>
   );

@@ -21,7 +21,7 @@ const Soft: FC<SoftProps> = ({ softSkills }) => {
 
   return (
     <section className={classes.soft}>
-      <h2>soft skills.</h2>
+      <h2>soft.</h2>
       <ul>{softSkill}</ul>
     </section>
   );
