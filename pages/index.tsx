@@ -4,13 +4,12 @@ import { getDocs, collection } from "firebase/firestore";
 import { db } from "configs/firebase";
 import { HomeModelData } from "models/HomeData";
 import classes from "styles/home.module.scss";
-import { LinkType } from "interfaces/navigation";
-import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
 import { IconDisplay } from "components/Global";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { HOSTNAME } from "variables";
-import Link from "next/link";
+import ButtonLinks from "components/Global/ButtonLinks/ButtonLinks";
+import HomeDetails from "components/Home/HomeDetails";
 
 interface StaticProps {
   data: HomeModelData;
@@ -18,24 +17,6 @@ interface StaticProps {
 
 const Home: FC<StaticProps> = ({ data }) => {
   const { push } = useRouter();
-
-  const socialMediaLinks: LinkType[] = [
-    {
-      Icon: SiFacebook,
-      label: "Facebook",
-      to: "https://www.facebook.com/DwrdVncntCvs.7/",
-    },
-    {
-      Icon: SiTwitter,
-      label: "Facebook",
-      to: "https://twitter.com/dwrdvncntcvs",
-    },
-    {
-      Icon: SiLinkedin,
-      label: "Facebook",
-      to: "https://www.linkedin.com/in/edward-vincent-cuevas-5a2485240/",
-    },
-  ];
 
   return (
     <>
@@ -53,25 +34,14 @@ const Home: FC<StaticProps> = ({ data }) => {
       </Head>
       <div id={classes.home}>
         <section>
-          <p>{data.greetings}</p>
-          <div className={classes.name}>
-            {data.name
-              .toUpperCase()
-              .split("")
-              .map((char, i) => (
-                <div className={classes.span} key={i}>
-                  {char.trim() === "" ? "\u00A0" : char}
-                </div>
-              ))}
-          </div>
-          <p>{data.description}</p>
+          <HomeDetails
+            description={data.description}
+            greetings={data.greetings}
+            name={data.name}
+          />
           <div className={classes["btn-group"]}>
             <button onClick={() => push(data.resume)}>RESUME</button>
-            {socialMediaLinks.map(({ Icon, to }, i) => (
-              <Link className={classes.btn} key={i} href={to} target="_blank">
-                <Icon />
-              </Link>
-            ))}
+            <ButtonLinks />
           </div>
         </section>
         <section>

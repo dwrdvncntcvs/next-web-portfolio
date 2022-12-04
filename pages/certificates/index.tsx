@@ -10,6 +10,8 @@ import { Header } from "layouts";
 import { CertificateData } from "models/CertificateData";
 import classes from "styles/certificates.module.scss";
 import { customImageLoader } from "utils/helper";
+import { app_logo } from "assets/images";
+import { HOSTNAME } from "variables";
 
 interface CertificatesProps {
   data: CertificateData;
@@ -25,6 +27,12 @@ const Certificates: FC<CertificatesProps> = ({ data }) => {
     <>
       <Head>
         <title>Certificates</title>
+        <meta property="og:title" content={`Certificates`} />
+        <meta property="og:description" content={data.description} />
+        <meta property="og:image" content={`${app_logo}w=256`} />
+        <meta property="og:type" content="website" />
+        <meta property="fb:app_id" content="864647734963796" />
+        <meta property="og:url" content={HOSTNAME} />
       </Head>
       <section className={classes.certificates}>
         <Header description={data.description} title="certificates." />

@@ -1,3 +1,4 @@
+import { app_logo } from "assets/images";
 import { IconDisplay } from "components/Global";
 import { db } from "configs/firebase";
 import { collection, getDocs } from "firebase/firestore";
@@ -16,14 +17,13 @@ import {
 } from "react-icons/hi";
 import classes from "styles/aboutMe.module.scss";
 import { customImageLoader } from "utils/helper";
+import { HOSTNAME } from "variables";
 
 interface AboutMeProps {
   data: PersonalData;
 }
 
 const AboutMe: FC<AboutMeProps> = ({ data }) => {
-  console.log(data);
-
   const divCount = [1, 2];
 
   const personalInfo: { Icon: IconType; label: string }[] = [
@@ -37,6 +37,12 @@ const AboutMe: FC<AboutMeProps> = ({ data }) => {
     <>
       <Head>
         <title>About Me | {data.name}</title>
+        <meta property="og:title" content={` About Me | ${data.name}`} />
+        <meta property="og:description" content={data.description[0]} />
+        <meta property="og:image" content={`${app_logo}w=256`} />
+        <meta property="og:type" content="website" />
+        <meta property="fb:app_id" content="864647734963796" />
+        <meta property="og:url" content={HOSTNAME} />
       </Head>
       <section className={classes["about-me"]}>
         <div className={classes["image-container"]}>
@@ -56,6 +62,7 @@ const AboutMe: FC<AboutMeProps> = ({ data }) => {
           {data.description.map((desc) => (
             <p key={desc}>{desc}</p>
           ))}
+
           {personalInfo.map(({ Icon, label }) => (
             <p key={label} className={classes.info}>
               <Icon /> {label.toUpperCase()}
