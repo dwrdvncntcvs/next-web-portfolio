@@ -1,0 +1,29 @@
+@import "styles/global.scss";
+
+.buttons {
+  @include flex(row);
+  gap: 10px;
+  z-index: 3;
+
+  .btn {
+    @include flex(column, center, center);
+    width: 65px;
+    height: 65px;
+    border-radius: 100%;
+    transform: translateY(40px);
+    border: 3px solid $quaternary-color;
+    background-color: transparent;
+    color: $quaternary-color;
+    font-size: 25px;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: all ease-out 0.2s;
+    font-weight: 500;
+
+    &:hover {
+      color: $secondary-color;
+      background-color: $quaternary-color;
+      letter-spacing: 6px;
+    }
+  }
+}

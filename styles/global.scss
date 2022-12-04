@@ -28,4 +28,40 @@ $phone: 500px;
   flex-direction: $direction;
   justify-content: $justify-content;
   align-items: $align-items;
-};
+}
+
+@mixin LGdesktop {
+  @media (max-width: #{$LGdesktop}) and (min-width: #{$MDdesktop + 1}) {
+    @content;
+  }
+}
+
+@mixin MDdesktop {
+  @media (max-width: #{$MDdesktop}) and (min-width: #{$desktop + 1}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) and (min-width: #{$LGtablet + 1}) {
+    @content;
+  }
+}
+
+@mixin LGtablet {
+  @media (max-width: #{$LGtablet}) and (min-width: #{$tablet + 1}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) and (min-width: #{$phone + 1}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: #{$phone}) and (min-width: #{$phone - 400}) {
+    @content;
+  }
+}

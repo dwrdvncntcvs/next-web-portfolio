@@ -24,8 +24,6 @@ interface AboutMeProps {
 }
 
 const AboutMe: FC<AboutMeProps> = ({ data }) => {
-  console.log(data);
-
   const divCount = [1, 2];
 
   const personalInfo: { Icon: IconType; label: string }[] = [
@@ -64,6 +62,7 @@ const AboutMe: FC<AboutMeProps> = ({ data }) => {
           {data.description.map((desc) => (
             <p key={desc}>{desc}</p>
           ))}
+
           {personalInfo.map(({ Icon, label }) => (
             <p key={label} className={classes.info}>
               <Icon /> {label.toUpperCase()}
