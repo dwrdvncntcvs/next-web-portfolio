@@ -1,11 +1,15 @@
 import "styles/globals.css";
 import type { AppProps } from "next/app";
-import { ContentContainer, MainLayout } from "layouts";
+import { MainLayout } from "layouts";
+import usePageLoader from "hooks/usePageLoader";
+import { LogoLoading } from "components/Global";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const pageLoading = usePageLoader();
+
   return (
     <MainLayout>
-      <Component {...pageProps} />
+      {pageLoading ? <LogoLoading /> : <Component {...pageProps} />}
     </MainLayout>
   );
 }
