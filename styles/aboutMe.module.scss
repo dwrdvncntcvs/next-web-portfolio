@@ -5,12 +5,21 @@
   width: 100%;
   height: 100%;
 
+  @include desktop {
+    @include flex(column, flex-start, flex-start);
+  }
+
   .image-container {
     width: 100%;
     height: 100%;
     @include flex(column, center, center);
     flex: 1;
     position: relative;
+
+    div,
+    img {
+      transition: all ease 0.2s;
+    }
 
     div:nth-child(1) {
       border-radius: 58% 42% 61% 39% / 30% 46% 54% 70%;
@@ -20,6 +29,14 @@
       position: absolute;
       left: 120px;
       border: 10px solid $secondary-color;
+
+      @include MDdesktop {
+        left: 60px;
+      }
+
+      @include desktop {
+        left: 170px;
+      }
     }
 
     div:nth-child(2) {
@@ -30,6 +47,14 @@
       position: absolute;
       top: 120px;
       border: 10px solid $secondary-color;
+
+      @include MDdesktop {
+        top: 60px;
+      }
+
+      @include desktop {
+        top: 10px;
+      }
     }
 
     img {
@@ -41,6 +66,14 @@
       position: absolute;
       right: 120px;
       border: 10px solid $secondary-color;
+
+      @include MDdesktop {
+        right: 60px;
+      }
+
+      @include desktop {
+        right: 170px;
+      }
     }
   }
 
@@ -50,10 +83,19 @@
     height: 100%;
     flex: 1;
     gap: 10px;
+    @include desktop {
+      z-index: 4;
+    }
 
     h1 {
       font-size: 4rem;
       color: $primary-color;
+      border-radius: 71% 29% 11% 89% / 66% 44% 56% 34% ;
+      padding-right: 5px;
+
+      @include desktop {
+        background-color: $secondary-color;
+      }
     }
 
     p {

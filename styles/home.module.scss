@@ -40,6 +40,10 @@
         transition: all ease-out 0.2s;
         border: none;
 
+        @include desktop {
+          font-size: 18px;
+        }
+
         &:hover {
           color: $quaternary-color;
           background-color: $primary-color;

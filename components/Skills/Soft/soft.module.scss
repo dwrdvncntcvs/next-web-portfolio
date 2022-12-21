@@ -28,6 +28,10 @@
         font-size: 1.3rem;
         width: 85%;
         color: $quaternary-color;
+
+        @include desktop {
+          font-size: 1.1rem;
+        }
       }
     }
   }
