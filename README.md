@@ -6,4 +6,6 @@ I did search some concepts of implementing SEO in ReactJS applications but mostl
 
 This application was the second iteration of my website portfolio project and this time I built this with **_NextJS_** and **_Firebase_**.
 
+_Reference: [Edward Vincent Website Portfolio (Built with ReactJS)](https://edwardvincentcuevas.pages.dev/)_ 
+
 _Note: This application is still in development._
