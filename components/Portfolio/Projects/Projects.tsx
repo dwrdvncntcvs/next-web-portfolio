@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { FC } from "react";
 import { Project } from "models/PortfolioData";
 import classes from "./projects.module.scss";
+import { DisplayImage } from "components/Global";
 
 interface ProjectProps {
   projects: Project[];
@@ -14,13 +15,7 @@ const Projects: FC<ProjectProps> = ({ projects }) => {
       {projects.map(({ id, imageUrl }) => (
         <Link href={`/portfolio/${id}`} key={id}>
           <li>
-            <Image
-              src={imageUrl}
-              alt={id}
-              width={300}
-              height={300}
-              loader={({ src, width }) => `${src}w?=${width}`}
-            />
+            <DisplayImage imageUrl={imageUrl} name={id} />
           </li>
         </Link>
       ))}
