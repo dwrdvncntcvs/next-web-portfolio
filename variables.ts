@@ -20,6 +20,7 @@ import {
   SiHtml5,
   SiCss3,
   SiRedux,
+  SiVite,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -148,6 +149,11 @@ const TECHNICAL_ICON_VAR: IconVar[] = [
     value: SiRedux,
     ref: "redux",
     color: "#764ABC",
+  },
+  {
+    value: SiVite,
+    ref: "vite",
+    color: "#646CFF",
   },
 ];
 

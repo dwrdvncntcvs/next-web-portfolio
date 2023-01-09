@@ -1,0 +1,14 @@
+@import "styles/global.scss";
+
+.word-display {
+  @include flex(row, center, center);
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: $primary-color;
+  color: $secondary-color;
+  border: 10px solid $secondary-color;
+  font-size: 4rem;
+  font-weight: 700;
+  user-select: none;
+}

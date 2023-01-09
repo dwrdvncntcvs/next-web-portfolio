@@ -47,7 +47,7 @@ const ProjectDetails: FC<ProjectDetailsProps> = ({ data }) => {
         />
         <ProjectIntro description={description} appLink={appLink} />
         <ProjectTech technologies={technologies} />
-        <ProjectImages images={images} />
+        {images && images.length > 0 && <ProjectImages images={images} />}
       </div>
     </>
   );
