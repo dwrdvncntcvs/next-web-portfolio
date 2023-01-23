@@ -35,6 +35,10 @@
 }
 
 .details {
+  @include phone {
+    @include flex(column, center, center);
+  }
+
   p,
   .name {
     transition: all ease 0.2s;
@@ -48,6 +52,18 @@
 
     @include desktop {
       font-size: 3rem;
+    }
+
+    @include LGtablet {
+      font-size: 3rem;
+    }
+
+    @include tablet {
+      font-size: 3rem;
+    }
+
+    @include phone {
+      font-size: 2.5rem;
     }
   }
 
@@ -65,6 +81,23 @@
       font-size: 5rem;
       transform: translateY(15px);
     }
+
+    @include LGtablet {
+      font-size: 5rem;
+      transform: translateY(15px);
+    }
+
+    @include tablet {
+      font-size: 4rem;
+      transform: translateY(15px);
+    }
+
+    @include phone {
+      font-size: 3rem;
+      transform: translateY(30px);
+      flex-wrap: wrap;
+      @include flex(row, center, center);
+    }
   }
 
   p:nth-child(3) {
@@ -73,6 +106,20 @@
 
     @include desktop {
       font-size: 1.5rem;
+    }
+
+    @include LGtablet {
+      font-size: 1.5rem;
+    }
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+
+    @include phone {
+      font-size: 1.25rem;
+      margin-top: 20px;
+      text-align: center;
     }
   }
 }

@@ -1,4 +1,5 @@
-import React, { FC, PropsWithChildren, useState } from "react";
+import useWindowSize from "hooks/useWindowSize";
+import React, { FC, PropsWithChildren, useEffect, useState } from "react";
 import classes from "./tooltip.module.scss";
 
 interface TooltipProps {
@@ -7,6 +8,9 @@ interface TooltipProps {
 
 const Tooltip: FC<TooltipProps & PropsWithChildren> = ({ title, children }) => {
   const [show, setShow] = useState(false);
+  const { width } = useWindowSize();
+
+  const shouldShowTooltip = width! > 1150;
 
   return (
     <div
@@ -15,7 +19,7 @@ const Tooltip: FC<TooltipProps & PropsWithChildren> = ({ title, children }) => {
       onMouseLeave={() => setShow(false)}
     >
       {children}
-      {show ? <span>{title}</span> : null}
+      {show && shouldShowTooltip ? <span>{title}</span> : null}
     </div>
   );
 };
