@@ -40,7 +40,7 @@ const Home: FC<StaticProps> = ({ data }) => {
             name={data.name}
           />
           <div className={classes["btn-group"]}>
-            <button onClick={() => push(data.resume)}>RESUME</button>
+            <button onClick={() => push(data.resume)}>CV</button>
             <ButtonLinks />
           </div>
         </section>
