@@ -10,5 +10,21 @@
     width: 100%;
     height: 100%;
     background-color: $secondary-color;
+    transition: all ease-in-out 0.2s;
+
+    @include LGtablet {
+      padding-left: 0px;
+      padding-top: $navigation-height-full-px;
+    }
+
+    @include tablet {
+      padding-left: 0px;
+      padding-bottom: $navigation-height-full-px;
+    }
+
+    @include phone {
+      padding-left: 0px;
+      padding-bottom: $navigation-height-full-px;
+    }
   }
 }

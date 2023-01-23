@@ -7,11 +7,47 @@
   background-color: $tertiary-color;
   position: fixed;
   z-index: 99;
+  transition: all ease-in-out 0.2s;
+  border-right: 5px solid $secondary-color;
+
+  @include LGtablet {
+    @include flex(row, center, center);
+    width: 100%;
+    height: 100px;
+    border: none;
+    border-bottom: 5px solid $secondary-color;
+  }
+
+  @include tablet {
+    bottom: 0;
+    @include flex(row, center, center);
+    width: 100%;
+    height: 100px;
+    border: none;
+    border-top: 5px solid $secondary-color;
+  }
+
+  @include phone {
+    bottom: 0;
+    @include flex(row, center, center);
+    width: 100%;
+    height: 100px;
+    border: none;
+    border-top: 5px solid $secondary-color;
+  }
 
   .title {
     @include flex(column, center, center);
     flex: 1;
     width: 100%;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include phone {
+      display: none;
+    }
 
     a {
       @include flex(column, center, center);
@@ -39,6 +75,26 @@
     width: 100%;
     list-style-type: none;
     gap: 10px;
+    padding: 0px 20px;
+
+    @include LGtablet {
+      @include flex(row, flex-end, flex-end);
+      width: 100%;
+      height: 100px;
+      gap: 0px;
+    }
+
+    @include tablet {
+      @include flex(row, center, center);
+      width: 100%;
+      height: 100px;
+    }
+
+    @include phone {
+      @include flex(row, space-between, center);
+      width: 100%;
+      height: 100px;
+    }
 
     a {
       @include flex(column, center, center);
@@ -49,6 +105,24 @@
       color: $tertiary-color;
       transition: all ease-out 0.2s;
 
+      @include LGtablet {
+        @include flex(row, center, center);
+        width: 75px;
+        height: 75px;
+        gap: 0px;
+        border-radius: 0px;
+        background-color: transparent;
+        color: $quaternary-color;
+      }
+
+      @include phone {
+        @include flex(row, center, center);
+        gap: 0px;
+        border-radius: 0px;
+        background-color: transparent;
+        color: $quaternary-color;
+      }
+
       #icon {
         width: calc($link-icon-size - 25px);
         height: calc($link-icon-size - 25px);
@@ -58,6 +132,11 @@
         background-color: $secondary-color;
         color: $primary-color;
         border-radius: 100%;
+
+        @include LGtablet {
+          color: $quaternary-color;
+          border-radius: 10px 10px 0px 0px;
+        }
       }
     }
 
@@ -65,11 +144,25 @@
       color: $quaternary-color;
       background-color: $primary-color;
       border-radius: 100%;
+      pointer-events: none;
 
-      &:hover {
-        color: $quaternary-color;
+      @include LGtablet {
+        @include flex(row, center, center);
+        width: 100px;
+        height: 75px;
+        gap: 0px;
+        border-radius: 0px;
+        background-color: $secondary-color;
+        color: $primary-color;
+        border-radius: 20px 20px 0px 0px;
+        margin: 0px 5px;
+      }
+
+      @include phone {
+        @include flex(row, center, center);
         background-color: $primary-color;
-        border-radius: 100%;
+        color: $quaternary-color;
+        border-radius: 20px
       }
     }
   }
@@ -79,6 +172,18 @@
     flex: 1;
     width: 100%;
     gap: 10px;
+
+    @include LGtablet {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    @include phone {
+      display: none;
+    }
 
     p {
       text-align: center;
