@@ -6,6 +6,10 @@
   width: 100%;
   overflow: auto;
 
+
+  @include tablet {
+    padding: 20px;
+  }
   @include phone {
     padding: 20px;
   }
