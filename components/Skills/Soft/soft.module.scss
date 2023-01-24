@@ -7,8 +7,13 @@
   gap: 20px;
 
   h2 {
-    font-size: 40px;
+    font-size: 3rem;
     color: $primary-color;
+    transition: all ease-in-out 0.2s;
+
+    @include phone {
+      font-size: 2.25rem;
+    }
   }
 
   ul {
@@ -28,8 +33,17 @@
         font-size: 1.3rem;
         width: 85%;
         color: $quaternary-color;
+        transition: all ease-in-out 0.2s;
 
         @include desktop {
+          font-size: 1.1rem;
+        }
+
+        @include tablet {
+          font-size: 1.1rem;
+        }
+
+        @include phone {
           font-size: 1.1rem;
         }
       }

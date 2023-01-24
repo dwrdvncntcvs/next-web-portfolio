@@ -11,5 +11,17 @@
 
   .row-content {
     @include flex(row, flex-start, flex-start);
+
+    @include LGtablet {
+      @include flex(column)
+    }
+
+    @include tablet {
+      @include flex(column)
+    }
+
+    @include phone {
+      @include flex(column)
+    }
   }
 }

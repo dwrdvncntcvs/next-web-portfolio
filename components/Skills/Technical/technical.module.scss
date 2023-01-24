@@ -5,6 +5,7 @@
   flex: 1;
   padding: 20px;
   gap: 20px;
+  transition: all ease-in-out 0.2s;
 
   h2 {
     font-size: 40px;
@@ -21,6 +22,15 @@
       width: 175px;
       margin: 3px;
       user-select: none;
+      transition: all ease-in-out .2s;
+
+      @include tablet {
+        width: 155px;
+      }
+
+      @include phone {
+        width: 145px;
+      }
 
       p {
         color: $quaternary-color;
@@ -30,6 +40,15 @@
         font-size: 65px;
         color: $quaternary-color;
         transition: all ease 0.2s;
+        transition: all ease-in-out .2s;
+
+        @include tablet {
+          font-size: 55px;
+        }
+
+        @include phone {
+          font-size: 45px;
+        }
 
         &:hover {
           transform: rotateZ(-20deg) translateY(-10px);
