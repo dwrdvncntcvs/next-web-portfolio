@@ -29,6 +29,7 @@
 
     @include LGtablet {
       width: 32%;
+      height: 350px;
     }
 
     @include phone {
