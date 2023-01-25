@@ -20,6 +20,7 @@ const transformName = (name: string) => {
 const DisplayImage: FC<DisplayImageProps> = ({ imageUrl, name }) => {
   return imageUrl ? (
     <Image
+      className={scss.image}
       src={imageUrl}
       alt={name}
       width={300}

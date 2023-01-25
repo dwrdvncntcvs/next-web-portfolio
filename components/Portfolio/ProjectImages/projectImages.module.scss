@@ -4,10 +4,22 @@
   @include flex(column);
   gap: 20px;
 
+  @include phone {
+    padding: 0px !important;
+
+    h2 {
+      margin: 20px 20px 0px 20px;
+    }
+  }
+
   .list {
     @include flex();
     flex-wrap: wrap;
     gap: 10px;
+
+    @include phone {
+      gap: 5px;
+    }
 
     img {
       width: 49.2%;
@@ -16,8 +28,22 @@
       background-color: $secondary-color;
       transition: all ease 0.2s;
 
+      @include tablet {
+        width: 100%;
+      }
+
+      @include phone {
+        width: 100%;
+        border-radius: 0px;
+      }
+
+      &:last-child {
+        border-radius: 0px 0px 10px 10px;
+      }
+
       &:hover {
         transform: scale(0.9);
+        border-radius: 10px;
       }
     }
   }

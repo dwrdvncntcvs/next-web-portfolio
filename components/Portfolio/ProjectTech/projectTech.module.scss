@@ -17,12 +17,32 @@
       padding: 10px 20px;
       border-radius: 25px;
 
+      @include tablet {
+        padding: 10px 20px;
+      }
+
+      @include phone {
+        padding: 5px 15px;
+      }
+
       #icon {
         font-size: 40px;
+
+        @include tablet {
+          font-size: 1.75rem;
+        }
+
+        @include phone {
+          font-size: 1.25rem;
+        }
       }
 
       span {
         color: $quaternary-color;
+
+        @include phone {
+          font-size: 0.75rem;
+        }
       }
     }
   }

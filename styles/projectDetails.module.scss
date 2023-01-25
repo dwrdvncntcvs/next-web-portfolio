@@ -14,8 +14,7 @@
     background-color: $tertiary-color;
     padding: 30px;
     border-radius: 10px;
-
-    transition: all ease 0.2s;
+    transition: all ease-in-out 0.2s;
 
     @include MDdesktop {
       width: 80%;
@@ -25,14 +24,39 @@
       width: 100%;
     }
 
+    @include LGtablet {
+      width: 100%;
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include phone {
+      width: 100%;
+
+      padding: 20px;
+    }
+
     h1 {
       color: $primary-color;
       font-size: 3.5rem;
+      transition: all ease-in-out 0.2s;
+
+
+      @include phone {
+        font-size: 2.5rem;
+      }
     }
 
     h2 {
       font-size: 2.5rem;
       color: $quaternary-color;
+      transition: all ease-in-out 0.2s;
+
+      @include phone {
+        font-size: 1.75rem;
+      }
     }
   }
 }

@@ -13,11 +13,11 @@ const Projects: FC<ProjectProps> = ({ projects }) => {
   return (
     <ul className={classes.projects}>
       {projects.map(({ id, imageUrl }) => (
-        <Link href={`/portfolio/${id}`} key={id}>
-          <li>
+        <li key={id}>
+          <Link href={`/portfolio/${id}`}>
             <DisplayImage imageUrl={imageUrl} name={id} />
-          </li>
-        </Link>
+          </Link>
+        </li>
       ))}
     </ul>
   );

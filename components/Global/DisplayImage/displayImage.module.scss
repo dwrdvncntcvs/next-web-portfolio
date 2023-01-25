@@ -11,4 +11,10 @@
   font-size: 4rem;
   font-weight: 700;
   user-select: none;
+  margin: 20px;
+}
+
+.image {
+  object-fit: contain;
+  width: 100%;
 }

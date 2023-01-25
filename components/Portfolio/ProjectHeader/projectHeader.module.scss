@@ -3,6 +3,11 @@
 .header {
   @include flex(row, flex-start, flex-start);
   position: relative;
+  transition: all ease-in-out 0.2s;
+
+  @include phone {
+    @include flex(column);
+  }
 
   img {
     background-color: $secondary-color;
@@ -14,6 +19,14 @@
     position: absolute;
     top: 20px;
     right: 20px;
+
+    @include phone {
+      position: absolute;
+      top: 85%;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+    }
 
     .link {
       @include flex(row, center, center);
@@ -46,6 +59,10 @@
     p:nth-child(2) {
       font-size: 1.25rem;
       font-weight: bold;
+
+      @include phone {
+        font-size: 1rem;
+      }
     }
 
     p:nth-child(3) {

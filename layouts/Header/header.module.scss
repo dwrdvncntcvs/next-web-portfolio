@@ -31,6 +31,7 @@
     font-size: 1.5rem;
     color: $quaternary-color;
     width: 70%;
+    transition: all ease-in-out 0.2s;
 
     @include desktop {
       font-size: 1.25rem;
@@ -41,6 +42,7 @@
     }
 
     @include tablet {
+      width: 100%;
       font-size: 1.25rem;
     }
 
