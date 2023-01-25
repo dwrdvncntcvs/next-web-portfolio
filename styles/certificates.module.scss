@@ -11,6 +11,10 @@
     height: 100%;
     gap: 10px;
 
+    @include LGtablet {
+      gap: 10px;
+    }
+
     li {
       @include flex(column, center, center);
       background-color: $tertiary-color;
@@ -18,13 +22,40 @@
       cursor: pointer;
       transition: all ease 0.2;
 
+      @include LGtablet {
+        width: 32%;
+      }
+
+      @include tablet {
+        width: 48%;
+      }
+
+      @include phone {
+        width: 100%;
+      }
+
       img {
         object-fit: cover;
         border-radius: 10px;
-        transition: all ease-out .2s;
+        transition: all ease-out 0.2s;
+
+        @include LGtablet {
+          width: 100%;
+        }
+
+        @include tablet {
+          width: 100%;
+        }
+        @include phone {
+          width: 100%;
+        }
 
         &:hover {
-          transform: scale(0.9  );
+          transform: scale(0.9);
+
+          @include phone {
+            border-radius: 10px;
+          }
         }
       }
     }
