@@ -44,7 +44,6 @@ const Home: FC<StaticProps> = ({ data }) => {
             <ButtonLinks />
           </div>
         </section>
-        <section></section>
         <IconDisplay />
       </div>
     </>
