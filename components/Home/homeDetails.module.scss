@@ -35,6 +35,21 @@
 }
 
 .details {
+  width: 60%;
+  transition: all ease-in-out 0.2s;
+
+  @include desktop {
+    width: 80%;
+  }
+
+  @include LGtablet {
+    width: 90%;
+  }
+
+  @include tablet {
+    width: 100%;
+  }
+
   @include phone {
     @include flex(column, center, center);
   }
@@ -65,7 +80,7 @@
 
     @include phone {
       font-size: 8vw;
-      transform: translateY(20px)
+      transform: translateY(20px);
     }
   }
 
