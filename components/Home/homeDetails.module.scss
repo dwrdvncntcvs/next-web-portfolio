@@ -52,6 +52,7 @@
 
   @include phone {
     @include flex(column, center, center);
+    width: 100%;
   }
 
   p,
