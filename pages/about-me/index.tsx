@@ -1,4 +1,6 @@
 import { app_logo } from "assets/images";
+import AboutMeDetails from "components/AboutMe/AboutMeDetails/AboutMeDetails";
+import AboutMeImage from "components/AboutMe/AboutMeImage/AboutMeImage";
 import { IconDisplay } from "components/Global";
 import { db } from "configs/firebase";
 import { collection, getDocs } from "firebase/firestore";
@@ -23,10 +25,13 @@ interface AboutMeProps {
   data: PersonalData;
 }
 
-const AboutMe: FC<AboutMeProps> = ({ data }) => {
-  const divCount = [1, 2];
+export interface PersonalInfoWithIcon {
+  Icon: IconType;
+  label: string;
+}
 
-  const personalInfo: { Icon: IconType; label: string }[] = [
+const AboutMe: FC<AboutMeProps> = ({ data }) => {
+  const personalInfo: PersonalInfoWithIcon[] = [
     { Icon: HiAtSymbol, label: data.email },
     { Icon: HiLocationMarker, label: data.address },
     { Icon: HiCalendar, label: data.birthday },
@@ -45,31 +50,12 @@ const AboutMe: FC<AboutMeProps> = ({ data }) => {
         <meta property="og:url" content={HOSTNAME} />
       </Head>
       <section className={classes["about-me"]}>
-        <div className={classes["image-container"]}>
-          {divCount.map((num) => (
-            <div key={num.toString()}></div>
-          ))}
-          <Image
-            src={data.imageUrl}
-            alt={data.name}
-            width={400}
-            height={400}
-            loader={customImageLoader}
-          />
-        </div>
-        <div className={classes["details"]}>
-          <Header title="about me." />
-          {data.description.map((desc) => (
-            <p key={desc}>{desc}</p>
-          ))}
-
-          {personalInfo.map(({ Icon, label }) => (
-            <p key={label} className={classes.info}>
-              <Icon /> {label.toUpperCase()}
-            </p>
-          ))}
-          <IconDisplay />
-        </div>
+        <AboutMeImage imageUrl={data?.imageUrl} name={data?.name} />
+        <AboutMeDetails
+          description={data?.description}
+          personalInfo={personalInfo}
+        />
+        <IconDisplay />
       </section>
     </>
   );

@@ -1,0 +1,120 @@
+@import "../../../styles/global.scss";
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  @include flex(column, center, center);
+  flex: 1;
+  position: relative;
+
+  div:nth-child(1) {
+    border-radius: 58% 42% 61% 39% / 30% 46% 54% 70%;
+    width: 500px;
+    height: 500px;
+    background-color: $quaternary-color;
+    position: absolute;
+    left: 120px;
+    border: 10px solid $secondary-color;
+
+    @include MDdesktop {
+      left: 60px;
+    }
+
+    @include desktop {
+      left: 190px;
+      width: 400px;
+      height: 400px;
+    }
+
+    @include LGtablet {
+      left: 200px;
+      width: 325px;
+      height: 325px;
+    }
+
+    @include tablet {
+      left: 140px;
+      width: 325px;
+      height: 325px;
+    }
+
+    @include phone {
+      left: 20px;
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  div:nth-child(2) {
+    border-radius: 58% 42% 61% 39% / 37% 36% 64% 63%;
+    width: 475px;
+    height: 475px;
+    background-color: $primary-color;
+    position: absolute;
+    top: 120px;
+    border: 10px solid $secondary-color;
+
+    @include MDdesktop {
+      top: 60px;
+    }
+
+    @include desktop {
+      top: 5px;
+      width: 400px;
+      height: 400px;
+    }
+
+    @include LGtablet {
+      top: -30px;
+      width: 325px;
+      height: 325px;
+    }
+    @include tablet {
+      top: 10px;
+      width: 325px;
+      height: 325px;
+    }
+    @include phone {
+      top: 10px;
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  img {
+    position: absolute;
+    border-radius: 39% 61% 27% 73% / 69% 32% 68% 31%;
+    width: 450px;
+    height: 450px;
+    background-color: $tertiary-color;
+    position: absolute;
+    right: 120px;
+    border: 10px solid $secondary-color;
+
+    @include MDdesktop {
+      right: 60px;
+    }
+
+    @include desktop {
+      right: 180px;
+      width: 400px;
+      height: 400px;
+    }
+
+    @include LGtablet {
+      right: 190px;
+      width: 325px;
+      height: 325px;
+    }
+    @include tablet {
+      right: 125px;
+      width: 325px;
+      height: 325px;
+    }
+    @include phone {
+      right: 20px;
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
