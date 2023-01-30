@@ -51,6 +51,8 @@ const ExperienceDetails: FC<ExperienceDetailsProps> = ({ data }) => {
               position={data.position}
             />
             <ExperienceProjects projects={data?.positions} />
+            <ExperienceProjects projects={data?.positions} />
+            <ExperienceProjects projects={data?.positions} />
           </div>
         </div>
       </section>
