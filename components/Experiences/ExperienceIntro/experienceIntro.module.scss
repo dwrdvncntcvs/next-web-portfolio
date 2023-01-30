@@ -7,14 +7,31 @@
   h2 {
     font-size: 3rem;
     color: $primary-color;
+    transition: all ease-in-out 0.2s;
+
+    @include desktop {
+      font-size: 2.5rem;
+    }
+
+    @include tablet {
+      font-size: 2.25rem;
+    }
+
+    @include phone {
+      font-size: 2.25rem;
+    }
   }
 
   address {
     font-size: 1rem;
+
+    @include phone {
+      font-size:.9rem;
+    }
   }
 
   p {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   #icon {

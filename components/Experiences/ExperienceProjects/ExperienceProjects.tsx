@@ -18,7 +18,7 @@ const ExperienceProjects: FC<ExperienceProjectsProps> = ({ projects }) => {
           <ul className={classes.tasks}>
             {tasks?.map((task) => (
               <li className={classes.task} key={task}>
-                <HiChevronRight /> {task}
+                <HiChevronRight className={classes.icon} /> <span>{task}</span>
               </li>
             ))}
           </ul>

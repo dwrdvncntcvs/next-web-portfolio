@@ -25,12 +25,13 @@ const ExperienceIntro: FC<ExperienceIntroProps> = ({
         {generateDate(experienceMeta.dateEnded.toString())}
       </p>
       <address>
-        <HiLocationMarker id={classes.icon} /> {experienceMeta.address}
+        <HiLocationMarker id={classes.icon} />{" "}
+        <span>{experienceMeta.address}</span>
       </address>
       {companyLink ? (
         <Link href={companyLink} target="_blank">
           <HiLink id={classes.icon} />
-          {companyLink}
+          <span>{companyLink}</span>
         </Link>
       ) : null}
     </div>

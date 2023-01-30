@@ -9,6 +9,21 @@
   .positions {
     h3 {
       font-size: 2rem;
+      transition: all ease-in-out 0.2s;
+
+      @include desktop {
+        font-size: 1.5rem;
+      }
+
+      @include tablet {
+        font-size: 1.25rem;
+        color: $primary-color;
+      }
+
+      @include phone {
+        font-size: 1.25rem;
+        color: $primary-color;
+      }
     }
 
     .tasks {
@@ -17,6 +32,20 @@
       list-style-type: none;
       padding-left: 40px;
       position: relative;
+
+      .icon {
+        width: 20px;
+      }
+
+      span {
+        width: 90%;
+      }
+
+      @include phone {
+        li {
+          font-size: 1rem;
+        }
+      }
     }
   }
 }
