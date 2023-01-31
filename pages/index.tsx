@@ -1,7 +1,5 @@
 import { GetStaticProps } from "next";
 import React, { FC } from "react";
-import { getDocs, collection } from "firebase/firestore";
-import { db } from "configs/firebase";
 import { HomeModelData } from "models/HomeData";
 import classes from "styles/home.module.scss";
 import { IconDisplay } from "components/Global";
@@ -10,6 +8,8 @@ import Head from "next/head";
 import { HOSTNAME } from "variables";
 import ButtonLinks from "components/Global/ButtonLinks/ButtonLinks";
 import HomeDetails from "components/Home/HomeDetails";
+import { wrapper } from "store/redux";
+import { getHomeData } from "store/redux/api/homeApi";
 
 interface StaticProps {
   data: HomeModelData;
@@ -50,20 +50,16 @@ const Home: FC<StaticProps> = ({ data }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const homeCollection = collection(db, "home");
-
-  const homeDocs = await getDocs(homeCollection);
-  const [data] = homeDocs.docs.map((docs) => ({
-    id: docs.id,
-    ...docs.data(),
-  }));
-
-  return {
-    props: {
-      data,
-    },
-  };
-};
+export const getStaticProps: GetStaticProps = wrapper.getStaticProps(
+  (store) => async () => {
+    const { data } = await store.dispatch(getHomeData.initiate(""));
+    
+    return {
+      props: {
+        data,
+      },
+    };
+  }
+);
 
 export default Home;

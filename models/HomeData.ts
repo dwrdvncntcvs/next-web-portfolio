@@ -1,5 +1,5 @@
 export interface HomeModelData {
-  id: string;
+  id?: string;
   image: string;
   resume: string;
   description: string;
