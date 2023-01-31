@@ -1,8 +1,7 @@
-import Image from "next/image";
 import React, { FC } from "react";
 import { SiGithub } from "react-icons/si";
 import { ProjectMeta } from "models/PortfolioData";
-import { customImageLoader, generateDate } from "utils/helper";
+import { generateDate } from "utils/helper";
 import classes from "./projectHeader.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
