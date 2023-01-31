@@ -167,4 +167,12 @@ const HOSTNAME =
     ? `${window.location.protocol}//${window.location.host}`
     : "";
 
-export { SKILL_TYPE_VAR, TECHNICAL_ICON_VAR, SOFT_ICON_VAR, HOSTNAME };
+const BASE_URL = process.env.NEXT_APP_BASE_URL;
+
+export {
+  SKILL_TYPE_VAR,
+  TECHNICAL_ICON_VAR,
+  SOFT_ICON_VAR,
+  HOSTNAME,
+  BASE_URL,
+};
