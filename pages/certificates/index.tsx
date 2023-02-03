@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const cert_docs = await getDoc(docs);
   const data = cert_docs.data() as CertificateData;
 
-  return { props: { data } };
+  return { props: { data }, revalidate: 10 };
 };
 
 export default Certificates;
