@@ -12,54 +12,55 @@ import { wrapper } from "store/redux";
 import { getHomeData } from "store/redux/api/homeApi";
 
 interface StaticProps {
-  data: HomeModelData;
+    data: HomeModelData;
 }
 
 const Home: FC<StaticProps> = ({ data }) => {
-  const { push } = useRouter();
+    const { push } = useRouter();
 
-  return (
-    <>
-      <Head>
-        <title>{data.name}</title>
-        <meta property="og:title" content={data.name} />
-        <meta property="og:description" content={data.description} />
-        <meta
-          property="og:image"
-          content={`${HOSTNAME}/_next/static/media/dwrdvncntcvs_logo.f13cb62f.png?w=256`}
-        />
-        <meta property="og:type" content="website" />
-        <meta property="fb:app_id" content="864647734963796" />
-        <meta property="og:url" content={HOSTNAME} />
-      </Head>
-      <div id={classes.home}>
-        <section>
-          <HomeDetails
-            description={data.description}
-            greetings={data.greetings}
-            name={data.name}
-          />
-          <div className={classes["btn-group"]}>
-            <button onClick={() => push(data.resume)}>CV</button>
-            <ButtonLinks />
-          </div>
-        </section>
-        <IconDisplay />
-      </div>
-    </>
-  );
+    return (
+        <>
+            <Head>
+                <title>{data.name}</title>
+                <meta property="og:title" content={data.name} />
+                <meta property="og:description" content={data.description} />
+                <meta
+                    property="og:image"
+                    content={`${HOSTNAME}/_next/static/media/dwrdvncntcvs_logo.f13cb62f.png?w=256`}
+                />
+                <meta property="og:type" content="website" />
+                <meta property="fb:app_id" content="864647734963796" />
+                <meta property="og:url" content={HOSTNAME} />
+            </Head>
+            <div id={classes.home}>
+                <section>
+                    <HomeDetails
+                        description={data.description}
+                        greetings={data.greetings}
+                        name={data.name}
+                    />
+                    <div className={classes["btn-group"]}>
+                        <button onClick={() => push(data.resume)}>CV</button>
+                        <ButtonLinks />
+                    </div>
+                </section>
+                <IconDisplay />
+            </div>
+        </>
+    );
 };
 
 export const getStaticProps: GetStaticProps = wrapper.getStaticProps(
-  (store) => async () => {
-    const { data } = await store.dispatch(getHomeData.initiate(""));
-    
-    return {
-      props: {
-        data,
-      },
-    };
-  }
+    (store) => async () => {
+        const { data } = await store.dispatch(getHomeData.initiate(""));
+
+        return {
+            props: {
+                data,
+            },
+            revalidate: 10,
+        };
+    }
 );
 
 export default Home;

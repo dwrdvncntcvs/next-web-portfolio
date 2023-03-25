@@ -11,38 +11,38 @@ import { app_logo } from "assets/images";
 import { HOSTNAME } from "variables";
 
 interface PortfolioProps {
-  data: PortfolioData;
+    data: PortfolioData;
 }
 
 const Portfolio: FC<PortfolioProps> = ({ data }) => {
-  return (
-    <>
-      <Head>
-        <title>Portfolio</title>
-        <meta property="og:title" content={`Portfolio`} />
-        <meta property="og:description" content={data.description} />
-        <meta property="og:image" content={`${app_logo}w=256`} />
-        <meta property="og:type" content="website" />
-        <meta property="fb:app_id" content="864647734963796" />
-        <meta property="og:url" content={HOSTNAME} />
-      </Head>
-      <section className={classes.portfolio}>
-        <Header title="portfolio." description={data.description} />
-        <Projects projects={data.projects} />
-      </section>
-    </>
-  );
+    return (
+        <>
+            <Head>
+                <title>Portfolio</title>
+                <meta property="og:title" content={`Portfolio`} />
+                <meta property="og:description" content={data.description} />
+                <meta property="og:image" content={`${app_logo}w=256`} />
+                <meta property="og:type" content="website" />
+                <meta property="fb:app_id" content="864647734963796" />
+                <meta property="og:url" content={HOSTNAME} />
+            </Head>
+            <section className={classes.portfolio}>
+                <Header title="portfolio." description={data.description} />
+                <Projects projects={data.projects} />
+            </section>
+        </>
+    );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const portfolioCollection = collection(db, "portfolio");
-  const portfolioDocs = await getDocs(portfolioCollection);
-  const data = portfolioDocs.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  }))[0] as PortfolioData;
+    const portfolioCollection = collection(db, "portfolio");
+    const portfolioDocs = await getDocs(portfolioCollection);
+    const data = portfolioDocs.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+    }))[0] as PortfolioData;
 
-  return { props: { data } };
+    return { props: { data }, revalidate: 10 };
 };
 
 export default Portfolio;

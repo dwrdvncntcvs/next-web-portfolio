@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps = async () => {
     ...doc.data(),
   })) as PersonalData[];
 
-  return { props: { data } };
+  return { props: { data }, revalidate: 10 };
 };
 
 export default AboutMe;

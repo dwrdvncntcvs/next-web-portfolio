@@ -42,7 +42,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const response = await getDocs(expCollection);
   const [data] = response.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 
-  return { props: { data } };
+  return { props: { data } , revalidate: 10};
 };
 
 export default Experiences;
