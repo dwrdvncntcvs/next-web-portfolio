@@ -8,15 +8,18 @@ import Head from "next/head";
 import { HOSTNAME } from "variables";
 import ButtonLinks from "components/Global/ButtonLinks/ButtonLinks";
 import HomeDetails from "components/Home/HomeDetails";
-import { wrapper } from "store/redux";
-import { getHomeData } from "store/redux/api/homeApi";
+import { Worker, Viewer } from "@react-pdf-viewer/core";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "configs/firebase";
+import useModal from "hooks/useModal";
+import '@react-pdf-viewer/core/lib/styles/index.css';
 
 interface StaticProps {
     data: HomeModelData;
 }
 
 const Home: FC<StaticProps> = ({ data }) => {
-    const { push } = useRouter();
+    const { Modal, toggleModal } = useModal();
 
     return (
         <>
@@ -40,27 +43,35 @@ const Home: FC<StaticProps> = ({ data }) => {
                         name={data.name}
                     />
                     <div className={classes["btn-group"]}>
-                        <button onClick={() => push(data.resume)}>CV</button>
+                        <button onClick={toggleModal(true)}>CV</button>
                         <ButtonLinks />
                     </div>
                 </section>
                 <IconDisplay />
             </div>
+            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.7.107/build/pdf.worker.min.js">
+                <Modal>
+                    <Viewer fileUrl={data.resume} />
+                </Modal>
+            </Worker>
         </>
     );
 };
 
-export const getStaticProps: GetStaticProps = wrapper.getStaticProps(
-    (store) => async () => {
-        const { data } = await store.dispatch(getHomeData.initiate(""));
+export const getStaticProps: GetStaticProps = async () => {
+    const homeCollection = collection(db, "home");
 
-        return {
-            props: {
-                data,
-            },
-            revalidate: 10,
-        };
-    }
-);
+    const homeDocs = await getDocs(homeCollection);
+    const [data] = homeDocs.docs.map((docs) => ({
+        id: docs.id,
+        ...docs.data(),
+    }));
+
+    return {
+        props: {
+            data,
+        },
+    };
+};
 
 export default Home;

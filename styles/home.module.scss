@@ -1,103 +1,147 @@
 @import "./global.scss";
 
 #home {
-  @include flex(row, flex-start, flex-start);
-  height: 100%;
-  width: 100%;
-
-  section {
+    @include flex(row, flex-start, flex-start);
     height: 100%;
-    z-index: 2;
+    width: 100%;
 
-    p {
-      user-select: none;
-    }
+    section {
+        height: 100%;
+        z-index: 2;
 
-    img {
-      height: 100%;
-    }
-  }
-
-  section:nth-child(1) {
-    @include flex(column, center, flex-start);
-    flex: 1;
-
-    .btn-group {
-      @include flex(row, center, center);
-      flex-wrap: wrap;
-      gap: 10px;
-
-      @include tablet {
-        font-size: 1rem;
-        width: 100%;
-        gap: 20px;
-      }
-
-      @include phone {
-        font-size: 1rem;
-        width: 100%;
-        gap: 20px;
-      }
-
-      button:nth-child(1) {
-        width: 400px;
-        height: 65px;
-        border-radius: 20px;
-        transform: translateY(40px);
-        background-color: $quaternary-color;
-        color: $secondary-color;
-        font-size: 25px;
-        font-weight: bold;
-        letter-spacing: 4px;
-        cursor: pointer;
-        transition: all ease-out 0.2s;
-        border: none;
-
-        @include desktop {
-          font-size: 18px;
+        p {
+            user-select: none;
         }
+
+        img {
+            height: 100%;
+        }
+    }
+
+    section:nth-child(1) {
+        @include flex(column, center, flex-start);
+        flex: 1;
+
+        .btn-group {
+            @include flex(row, center, center);
+            flex-wrap: wrap;
+            gap: 10px;
+
+            @include tablet {
+                font-size: 1rem;
+                width: 100%;
+                gap: 20px;
+            }
+
+            @include phone {
+                font-size: 1rem;
+                width: 100%;
+                gap: 20px;
+            }
+
+            button:nth-child(1) {
+                width: 400px;
+                height: 65px;
+                border-radius: 20px;
+                transform: translateY(40px);
+                background-color: $quaternary-color;
+                color: $secondary-color;
+                font-size: 25px;
+                font-weight: bold;
+                letter-spacing: 4px;
+                cursor: pointer;
+                transition: all ease-out 0.2s;
+                border: none;
+
+                @include desktop {
+                    font-size: 18px;
+                }
+
+                @include LGtablet {
+                    font-size: 1.5rem;
+                }
+
+                @include tablet {
+                    font-size: 1.5rem;
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 10px;
+                }
+
+                @include phone {
+                    font-size: 1.5rem;
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 10px;
+                }
+
+                &:hover {
+                    color: $quaternary-color;
+                    background-color: $primary-color;
+                    letter-spacing: 6px;
+                    border-color: $primary-color;
+                }
+            }
+        }
+    }
+
+    section:nth-child(2) {
+        @include flex(column, flex-start, flex-start);
+        flex: 2;
+        padding-left: 100px;
 
         @include LGtablet {
-          font-size: 1.5rem;
+            display: none;
         }
-
         @include tablet {
-          font-size: 1.5rem;
-          width: 100%;
-          height: 50px;
-          border-radius: 10px;
+            display: none;
         }
-
         @include phone {
-          font-size: 1.5rem;
-          width: 100%;
-          height: 50px;
-          border-radius: 10px;
+            display: none;
         }
+    }
+}
+
+.backdrop {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.205);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.modal {
+    width: 50rem;
+    height: 90%;
+    overflow-y: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    border-radius: 0.5rem;
+
+    button {
+        position: absolute;
+        z-index: 1002;
+        right: 1rem;
+        top: 1rem;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $base-color;
+        background-color: $delete-color;
+        border: $delete-color;
+        border-radius: 100%;
+        transition: all ease 0.2s;
+        cursor: pointer;
 
         &:hover {
-          color: $quaternary-color;
-          background-color: $primary-color;
-          letter-spacing: 6px;
-          border-color: $primary-color;
+            background-color: $delete-color-1;
         }
-      }
     }
-  }
-
-  section:nth-child(2) {
-    @include flex(column, flex-start, flex-start);
-    flex: 2;
-    padding-left: 100px;
-
-    @include LGtablet {
-      display: none;
-    }
-    @include tablet {
-      display: none;
-    }
-    @include phone {
-      display: none;
-    }
-  }
 }
