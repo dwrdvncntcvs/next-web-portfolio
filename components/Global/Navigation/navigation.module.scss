@@ -1,220 +1,218 @@
 @import "styles/global.scss";
 
 .navigation {
-  @include flex(column, flex-start, flex-start);
-  width: $navigation-width-full-px;
-  height: 100%;
-  background-color: $tertiary-color;
-  position: fixed;
-  z-index: 99;
-  transition: all ease-in-out 0.2s;
-  border-right: 5px solid $secondary-color;
-
-  @include LGtablet {
-    @include flex(row, center, center);
-    width: 100%;
-    height: 100px;
-    border: none;
-    border-bottom: 5px solid $secondary-color;
-  }
-
-  @include tablet {
-    bottom: 0;
-    @include flex(row, center, center);
-    width: 100%;
-    height: 75px;
-    border: none;
-    border-top: 5px solid $secondary-color;
-  }
-
-  @include phone {
-    bottom: 0;
-    @include flex(row, center, center);
-    width: 100%;
-    height: 75px;
-    border: none;
-    border-top: 5px solid $secondary-color;
-  }
-
-  .title {
-    @include flex(column, center, center);
-    flex: 1;
-    width: 100%;
-
-    @include tablet {
-      display: none;
-    }
-
-    @include phone {
-      display: none;
-    }
-
-    a {
-      @include flex(column, center, center);
-      border-radius: 100%;
-      background-color: $secondary-color;
-      width: calc($logo-size - 5px);
-      height: calc($logo-size - 5px);
-
-      img {
-        width: $logo-size;
-        height: $logo-size;
-        transition: all ease 0.2s;
-
-        &:active {
-          width: calc($logo-size + 25px);
-          height: calc($logo-size + 25px);
-        }
-      }
-    }
-  }
-
-  .links {
-    @include flex(column, center, center);
-    flex: 3;
-    width: 100%;
-    list-style-type: none;
-    gap: 10px;
-    padding: 0px 20px;
+    @include flex(column, flex-start, flex-start);
+    width: $navigation-width-full-px;
+    height: 100%;
+    background-color: $tertiary-color;
+    position: fixed;
+    z-index: 99;
+    transition: all ease-in-out 0.2s;
+    border-right: 5px solid $secondary-color;
 
     @include LGtablet {
-      @include flex(row, flex-end, flex-end);
-      width: 100%;
-      height: 100px;
-      gap: 0px;
+        @include flex(row, center, center);
+        width: 100%;
+        height: 100px;
+        border: none;
+        border-bottom: 5px solid $secondary-color;
     }
 
     @include tablet {
-      @include flex(row, center, center);
-      width: 100%;
-      height: 100px;
+        bottom: 0;
+        @include flex(row, center, center);
+        width: 100%;
+        height: 75px;
+        border: none;
+        border-top: 5px solid $secondary-color;
     }
 
     @include phone {
-      @include flex(row, space-between, center);
-      width: 100%;
-      height: 100px;
+        bottom: 0;
+        @include flex(row, center, center);
+        width: 100%;
+        height: 75px;
+        border: none;
+        border-top: 5px solid $secondary-color;
     }
 
-    a {
-      @include flex(column, center, center);
-      width: $link-icon-size;
-      height: $link-icon-size;
-      background-color: $quaternary-color;
-      border-radius: 20px;
-      color: $tertiary-color;
-      transition: all ease-out 0.2s;
+    .title {
+        @include flex(column, center, center);
+        flex: 1;
+        width: 100%;
 
-      @include LGtablet {
-        @include flex(row, center, center);
-        width: 75px;
-        height: 75px;
-        gap: 0px;
-        border-radius: 0px;
-        background-color: transparent;
-        color: $quaternary-color;
-      }
-
-      @include phone {
-        @include flex(row, center, center);
-        gap: 0px;
-        border-radius: 0px;
-        background-color: transparent;
-        color: $quaternary-color;
-      }
-
-      #icon {
-        width: calc($link-icon-size - 25px);
-        height: calc($link-icon-size - 25px);
-      }
-
-      &:hover {
-        background-color: $secondary-color;
-        color: $primary-color;
-        border-radius: 100%;
-
-        @include LGtablet {
-          color: $quaternary-color;
-          border-radius: 10px 10px 0px 0px;
+        @include tablet {
+            display: none;
         }
 
         @include phone {
-          @include flex(row, center, center);
-          background-color: $primary-color;
-          color: $quaternary-color;
-          border-radius: 20px;
+            display: none;
         }
-      }
-    }
 
-    .active {
-      color: $quaternary-color;
-      background-color: $primary-color;
-      border-radius: 100%;
-      pointer-events: none;
+        a {
+            @include flex(column, center, center);
+            border-radius: 100%;
+            background-color: $secondary-color;
+            width: calc($logo-size - 5px);
+            height: calc($logo-size - 5px);
 
-      @include LGtablet {
-        @include flex(row, center, center);
-        width: 100px;
-        height: 75px;
-        gap: 0px;
-        border-radius: 0px;
-        background-color: $secondary-color;
-        color: $primary-color;
-        border-radius: 20px 20px 0px 0px;
-        margin: 0px 5px;
-      }
+            img {
+                width: $logo-size;
+                height: $logo-size;
+                transition: all ease 0.2s;
 
-      @include phone {
-        @include flex(row, center, center);
-        background-color: $primary-color;
-        color: $quaternary-color;
-        border-radius: 20px;
-      }
-    }
-  }
-
-  .footer {
-    @include flex(column, center, center);
-    flex: 1;
-    width: 100%;
-    gap: 10px;
-
-    @include LGtablet {
-      display: none;
-    }
-
-    @include tablet {
-      display: none;
-    }
-
-    @include phone {
-      display: none;
-    }
-
-    p {
-      text-align: center;
-      font-size: 0.8rem;
-      color: $quaternary-color;
-
-      span {
-        color: $primary-color;
-        font-weight: bold;
-      }
-    }
-
-    .social-links {
-      @include flex(row, center, center);
-      gap: 10px;
-
-      a {
-        color: $quaternary-color;
-
-        #social-icon {
-          width: 20px;
-          height: 20px;
+                &:active {
+                    width: calc($logo-size + 25px);
+                    height: calc($logo-size + 25px);
+                }
+            }
         }
-      }
     }
-  }
+
+    .links {
+        @include flex(column, center, center);
+        flex: 3;
+        width: 100%;
+        list-style-type: none;
+        gap: 10px;
+        padding: 0px 20px;
+
+        @include LGtablet {
+            @include flex(row, flex-end, flex-end);
+            width: 100%;
+            height: 100px;
+            gap: 0px;
+        }
+
+        @include tablet {
+            @include flex(row, center, center);
+            width: 100%;
+            height: 100px;
+        }
+
+        @include phone {
+            @include flex(row, space-between, center);
+            width: 100%;
+            height: 100px;
+        }
+
+        a {
+            @include flex(column, center, center);
+            width: $link-icon-size;
+            height: $link-icon-size;
+            background-color: $quaternary-color;
+            border-radius: 20px;
+            color: $tertiary-color;
+            transition: all ease-out 0.2s;
+
+            @include LGtablet {
+                @include flex(row, center, center);
+                width: 75px;
+                height: 75px;
+                gap: 0px;
+                border-radius: 0px;
+                background-color: transparent;
+                color: $quaternary-color;
+            }
+
+            @include phone {
+                @include flex(row, center, center);
+                gap: 0px;
+                border-radius: 0px;
+                background-color: transparent;
+                color: $quaternary-color;
+            }
+
+            #icon {
+                width: calc($link-icon-size - 25px);
+                height: calc($link-icon-size - 25px);
+            }
+
+            &:hover {
+                background-color: $secondary-color;
+                color: $primary-color;
+                border-radius: 100%;
+
+                @include LGtablet {
+                    color: $quaternary-color;
+                    border-radius: 10px 10px 0px 0px;
+                }
+
+                @include phone {
+                    @include flex(row, center, center);
+                    background-color: $primary-color;
+                    color: $quaternary-color;
+                    border-radius: 20px;
+                }
+            }
+        }
+
+        .active {
+            color: $quaternary-color;
+            background-color: $primary-color;
+            border-radius: 100%;
+            pointer-events: none;
+
+            @include LGtablet {
+                @include flex(row, center, center);
+                gap: 0px;
+                border-radius: 0px;
+                background-color: transparent;
+                color: $primary-color;
+                border-radius: 20px 20px 0px 0px;
+                margin: 0px 5px;
+            }
+
+            @include phone {
+                @include flex(row, center, center);
+                background-color: $primary-color;
+                color: $quaternary-color;
+                border-radius: 20px;
+            }
+        }
+    }
+
+    .footer {
+        @include flex(column, center, center);
+        flex: 1;
+        width: 100%;
+        gap: 10px;
+
+        @include LGtablet {
+            display: none;
+        }
+
+        @include tablet {
+            display: none;
+        }
+
+        @include phone {
+            display: none;
+        }
+
+        p {
+            text-align: center;
+            font-size: 0.8rem;
+            color: $quaternary-color;
+
+            span {
+                color: $primary-color;
+                font-weight: bold;
+            }
+        }
+
+        .social-links {
+            @include flex(row, center, center);
+            gap: 10px;
+
+            a {
+                color: $quaternary-color;
+
+                #social-icon {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
 }
