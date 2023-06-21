@@ -3,16 +3,16 @@ import React, { FC } from "react";
 import { HomeModelData } from "models/HomeData";
 import classes from "styles/home.module.scss";
 import { IconDisplay } from "components/Global";
-import { useRouter } from "next/router";
 import Head from "next/head";
 import { HOSTNAME } from "variables";
 import ButtonLinks from "components/Global/ButtonLinks/ButtonLinks";
 import HomeDetails from "components/Home/HomeDetails";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
-import { collection, getDocs } from "firebase/firestore";
 import { db } from "configs/firebase";
 import useModal from "hooks/useModal";
-import '@react-pdf-viewer/core/lib/styles/index.css';
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import FireStoreCollection from "../firebase/firestoreCollection";
+import useFirestoreCollection from "hooks/useFirestoreCollection";
 
 interface StaticProps {
     data: HomeModelData;
@@ -59,13 +59,10 @@ const Home: FC<StaticProps> = ({ data }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-    const homeCollection = collection(db, "home");
-
-    const homeDocs = await getDocs(homeCollection);
-    const [data] = homeDocs.docs.map((docs) => ({
-        id: docs.id,
-        ...docs.data(),
-    }));
+    const data = await new FireStoreCollection<HomeModelData>(
+        db,
+        "home"
+    ).getData();
 
     return {
         props: {
