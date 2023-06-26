@@ -1,14 +1,14 @@
-import { collection, getDocs } from "firebase/firestore";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import React, { FC } from "react";
 import { Projects } from "components/Portfolio";
-import { db } from "configs/firebase";
 import { Header } from "layouts";
 import { PortfolioData } from "models/PortfolioData";
 import classes from "styles/portfolio.module.scss";
 import { app_logo } from "assets/images";
 import { HOSTNAME } from "variables";
+import { storeDispatch } from "store/redux";
+import { getPortfolioData } from "store/redux/api/portfolioApi";
 
 interface PortfolioProps {
     data: PortfolioData;
@@ -35,14 +35,9 @@ const Portfolio: FC<PortfolioProps> = ({ data }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-    const portfolioCollection = collection(db, "portfolio");
-    const portfolioDocs = await getDocs(portfolioCollection);
-    const data = portfolioDocs.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-    }))[0] as PortfolioData;
+    const data = await storeDispatch(getPortfolioData());
 
-    return { props: { data }, revalidate: 10 };
+    return { props: { data: data.payload }, revalidate: 10 };
 };
 
 export default Portfolio;
