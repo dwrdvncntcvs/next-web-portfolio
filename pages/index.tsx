@@ -8,11 +8,10 @@ import { HOSTNAME } from "variables";
 import ButtonLinks from "components/Global/ButtonLinks/ButtonLinks";
 import HomeDetails from "components/Home/HomeDetails";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
-import { db } from "configs/firebase";
 import useModal from "hooks/useModal";
 import "@react-pdf-viewer/core/lib/styles/index.css";
-import FireStoreCollection from "../firebase/firestoreCollection";
-import useFirestoreCollection from "hooks/useFirestoreCollection";
+import { storeDispatch } from "store/redux";
+import { getHomePageData } from "store/redux/api/homePageApi";
 
 interface StaticProps {
     data: HomeModelData;
@@ -24,9 +23,9 @@ const Home: FC<StaticProps> = ({ data }) => {
     return (
         <>
             <Head>
-                <title>{data.name}</title>
-                <meta property="og:title" content={data.name} />
-                <meta property="og:description" content={data.description} />
+                <title>{data?.name}</title>
+                <meta property="og:title" content={data?.name} />
+                <meta property="og:description" content={data?.description} />
                 <meta
                     property="og:image"
                     content={`${HOSTNAME}/_next/static/media/dwrdvncntcvs_logo.f13cb62f.png?w=256`}
@@ -38,9 +37,9 @@ const Home: FC<StaticProps> = ({ data }) => {
             <div id={classes.home}>
                 <section>
                     <HomeDetails
-                        description={data.description}
-                        greetings={data.greetings}
-                        name={data.name}
+                        description={data?.description!}
+                        greetings={data?.greetings!}
+                        name={data?.name!}
                     />
                     <div className={classes["btn-group"]}>
                         <button onClick={toggleModal(true)}>CV</button>
@@ -51,7 +50,7 @@ const Home: FC<StaticProps> = ({ data }) => {
             </div>
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.7.107/build/pdf.worker.min.js">
                 <Modal>
-                    <Viewer fileUrl={data.resume} />
+                    <Viewer fileUrl={data?.resume!} />
                 </Modal>
             </Worker>
         </>
@@ -59,14 +58,11 @@ const Home: FC<StaticProps> = ({ data }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-    const data = await new FireStoreCollection<HomeModelData>(
-        db,
-        "home"
-    ).getData();
+    const data = await storeDispatch(getHomePageData());
 
     return {
         props: {
-            data,
+            data: data.payload,
         },
     };
 };
