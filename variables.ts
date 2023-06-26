@@ -171,6 +171,7 @@ const BASE_URL = process.env.NEXT_APP_BASE_URL;
 
 const F_COLLECTION = {
     HOME: "home",
+    SKILLS: "skills",
 };
 
 export {
