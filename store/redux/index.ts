@@ -22,6 +22,6 @@ export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
-export const storeDispatch: typeof store.dispatch = store.dispatch;
+export const storeDispatch: AppDispatch = store.dispatch;
 
 export const wrapper = createWrapper(makeStore, { debug: false });

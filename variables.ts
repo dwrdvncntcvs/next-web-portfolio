@@ -173,6 +173,7 @@ const F_COLLECTION = {
     HOME: "home",
     SKILLS: "skills",
     PORTFOLIO: "portfolio",
+    PORTFOLIO_DETAILS: "portfolioDetails",
 };
 
 export {
