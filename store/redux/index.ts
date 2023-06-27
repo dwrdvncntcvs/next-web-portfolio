@@ -3,13 +3,14 @@ import { useSelector } from "react-redux";
 import { TypedUseSelectorHook, useDispatch } from "react-redux";
 import { createWrapper } from "next-redux-wrapper";
 import homeApi from "./api/homeApi";
-import { homeData, skillData } from "./features";
+import { homeData, skillData, portfolioData } from "./features";
 
 export const store = configureStore({
     reducer: {
         [homeApi.reducerPath]: homeApi.reducer,
         homeData,
         skillData,
+        portfolioData,
     },
     middleware(getDefaultMiddleware) {
         return getDefaultMiddleware().concat(homeApi.middleware);

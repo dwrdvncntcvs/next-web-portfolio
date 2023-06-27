@@ -7,7 +7,7 @@ import { PortfolioData } from "models/PortfolioData";
 import classes from "styles/portfolio.module.scss";
 import { app_logo } from "assets/images";
 import { HOSTNAME } from "variables";
-import { storeDispatch } from "store/redux";
+import { getStoreState, storeDispatch } from "store/redux";
 import { getPortfolioData } from "store/redux/api/portfolioApi";
 
 interface PortfolioProps {
@@ -35,9 +35,10 @@ const Portfolio: FC<PortfolioProps> = ({ data }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-    const data = await storeDispatch(getPortfolioData());
+    await storeDispatch(getPortfolioData());
+    const { data } = getStoreState("portfolioData");
 
-    return { props: { data: data.payload }, revalidate: 10 };
+    return { props: { data }, revalidate: 10 };
 };
 
 export default Portfolio;
