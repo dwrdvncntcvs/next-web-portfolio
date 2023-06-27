@@ -1,7 +1,5 @@
-import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { GetStaticPaths, GetStaticProps } from "next";
 import React, { FC } from "react";
-import { db } from "configs/firebase";
 import { PortfolioData, ProjectDetailsData } from "models/PortfolioData";
 import {
     ProjectHeader,
@@ -12,7 +10,7 @@ import {
 import classes from "styles/projectDetails.module.scss";
 import Head from "next/head";
 import { HOSTNAME } from "variables";
-import { storeDispatch } from "store/redux";
+import { getStoreState, storeDispatch } from "store/redux";
 import { getPortfolioData } from "store/redux/api/portfolioApi";
 import { getPortfolioDetails } from "store/redux/api/portfolioDetailsApi";
 
@@ -72,11 +70,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const data = await storeDispatch(
-        getPortfolioDetails(params?.projectId as string)
-    );
+    await storeDispatch(getPortfolioDetails(params?.projectId as string));
+    const { data } = getStoreState("portfolioDetailsData");
 
-    return { props: { data: data.payload }, revalidate: 10 };
+    return { props: { data }, revalidate: 10 };
 };
 
 export default ProjectDetails;
