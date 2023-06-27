@@ -10,7 +10,7 @@ import HomeDetails from "components/Home/HomeDetails";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
 import useModal from "hooks/useModal";
 import "@react-pdf-viewer/core/lib/styles/index.css";
-import { storeDispatch } from "store/redux";
+import { getStoreState, store, storeDispatch } from "store/redux";
 import { getHomePageData } from "store/redux/api/homePageApi";
 
 interface StaticProps {
@@ -58,11 +58,12 @@ const Home: FC<StaticProps> = ({ data }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-    const data = await storeDispatch(getHomePageData());
+    await storeDispatch(getHomePageData());
+    const state = getStoreState("homeData");
 
     return {
         props: {
-            data: data.payload,
+            data: state.data,
         },
     };
 };
