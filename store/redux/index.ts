@@ -8,6 +8,7 @@ import {
     skillData,
     portfolioData,
     portfolioDetailsData,
+    experienceData,
 } from "./features";
 
 export const store = configureStore({
@@ -17,6 +18,7 @@ export const store = configureStore({
         skillData,
         portfolioData,
         portfolioDetailsData,
+        experienceData,
     },
     middleware(getDefaultMiddleware) {
         return getDefaultMiddleware().concat(homeApi.middleware);

@@ -174,6 +174,7 @@ const F_COLLECTION = {
     SKILLS: "skills",
     PORTFOLIO: "portfolio",
     PORTFOLIO_DETAILS: "portfolioDetails",
+    EXPERIENCE: "experiences",
 };
 
 export {
