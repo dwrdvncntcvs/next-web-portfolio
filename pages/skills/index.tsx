@@ -6,7 +6,7 @@ import classes from "styles/skill.module.scss";
 import Head from "next/head";
 import { Soft, Technical } from "components/Skills";
 import { HOSTNAME } from "variables";
-import { storeDispatch } from "store/redux";
+import { getStoreState, storeDispatch } from "store/redux";
 import { getSkillsData } from "store/redux/api/skillsPageApi";
 
 interface SkillProps {
@@ -40,9 +40,10 @@ const Skills: FC<SkillProps> = ({ data }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-    const data = await storeDispatch(getSkillsData());
+    await storeDispatch(getSkillsData());
+    const { data } = getStoreState("skillData");
 
-    return { props: { data: data.payload } };
+    return { props: { data } };
 };
 
 export default Skills;
