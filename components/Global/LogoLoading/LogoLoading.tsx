@@ -1,4 +1,4 @@
-import { app_logo } from "assets/images";
+import { Logo } from "assets/svgs";
 import Image from "next/image";
 import React from "react";
 import classes from "./logoLoading.module.scss";
@@ -8,7 +8,7 @@ const LogoLoading = () => {
     <div className={classes.container}>
       <Image
         className={classes.logo}
-        src={app_logo.src}
+        src={Logo.src}
         width={300}
         height={300}
         loader={({ src }) => src}

@@ -52,7 +52,6 @@
         a {
             @include flex(column, center, center);
             border-radius: 100%;
-            background-color: $secondary-color;
             width: calc($logo-size - 5px);
             height: calc($logo-size - 5px);
 
@@ -60,11 +59,6 @@
                 width: $logo-size;
                 height: $logo-size;
                 transition: all ease 0.2s;
-
-                &:active {
-                    width: calc($logo-size + 25px);
-                    height: calc($logo-size + 25px);
-                }
             }
         }
     }

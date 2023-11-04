@@ -12,7 +12,7 @@ import {
 } from "react-icons/hi";
 import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
 import { useRouter } from "next/router";
-import { app_logo } from "assets/images";
+import { Logo } from "assets/svgs";
 import { LinkType } from "interfaces/navigation";
 import Tooltip from "components/Global/Tooltip/Tooltip";
 
@@ -51,7 +51,7 @@ const Navigation = () => {
       <div className={classes.title}>
         <Link href="/">
           <Image
-            src={app_logo.src}
+            src={Logo.src}
             alt=""
             width={100}
             height={100}
