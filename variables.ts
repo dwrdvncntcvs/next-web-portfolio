@@ -21,6 +21,7 @@ import {
     SiCss3,
     SiRedux,
     SiVite,
+    SiNextdotjs,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -154,6 +155,11 @@ const TECHNICAL_ICON_VAR: IconVar[] = [
         value: SiVite,
         ref: "vite",
         color: "#646CFF",
+    },
+    {
+        value: SiNextdotjs,
+        ref: "nextjs",
+        color: "#000000",
     },
 ];
 
