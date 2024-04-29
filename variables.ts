@@ -22,6 +22,7 @@ import {
     SiRedux,
     SiVite,
     SiNextdotjs,
+    SiSvelte,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -161,6 +162,11 @@ const TECHNICAL_ICON_VAR: IconVar[] = [
         ref: "nextjs",
         color: "#000000",
     },
+    {
+        value: SiSvelte,
+        ref: "svelte",
+        color: "#ff3e00"
+    }
 ];
 
 const SKILL_TYPE_VAR = {
